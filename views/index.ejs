@@ -1,11 +1,58 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+	<head>
+		<title>Haiku for you</title>
+		
+		<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+		
+		<link href="/stylesheets/style.css" rel="stylesheet">
+		<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.js"></script>
+		<script src="/javascripts/angularApp.js"></script>
+		<link href='https://fonts.googleapis.com/css?family=Merriweather|Open+Sans:300,800' rel='stylesheet' type='text/css'>
+	
+	</head>
+	<body ng-app="haikuForYou" ng-controller="MainCtrl">
+			<header>
+				<h2 class="brand">HAIKU FOR YOU</h2>		
+			</header>
+		<div ng-repeat="haiku in haikus"> 
+			{{haiku.haikuBody}}
+		</div>
+		
+		<ui-view></ui-view>
+		
+		
+		<script type="text/ng-template" id="/home.html">
+			<header>
+				<buttom class="submit">SUBMIT A HAIKU</button>		
+			</header>
+			<main>
+					<h1 class="mainHaiku">Fallen sick on a journey, In dreams I run wildly Over a withered moor.</h1>
+			</main>
+			<footer>
+				<button class="more">MORE HAIKUS</button>
+			</footer>
+
+		</script>
+		
+		
+		
+		<script type="text/ng-template" id="/new.html">
+		
+			<form ng-submit="addHaiku()">
+				<input type="text" placeholder="Haiku" ng-model="haikuBody">
+				<button type="submit">Post</button>
+			</form>
+
+
+		
+
+		</script>		
+		
+		
+		
+	</body>
 </html>

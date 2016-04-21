@@ -5,8 +5,15 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+var mongoose = require('mongoose');
+require('./models/Haikus');
+
+mongoose.connect('mongodb://localhost/haikus'); //not sure about the haikus part  this is the connection to MongoDB
+
 var routes = require('./routes/index');
 var users = require('./routes/users');
+
+
 
 var app = express();
 
