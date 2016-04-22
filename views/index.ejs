@@ -15,10 +15,7 @@
 	
 	</head>
 	<body ng-app="haikuForYou" ng-controller="MainCtrl">
-	<!--	<div ng-repeat="haiku in haikus"> 
-			{{haiku.haikuBody}}
-		</div>
-	-->	
+
 		<ui-view></ui-view>
 		
 		
@@ -28,7 +25,9 @@
 				<a class="submit" href="/#/new">SUBMIT A HAIKU</a>		
 			</header>		
 			<main>
-					<h1 class="mainHaiku">{{haikusRandom[currentHaiku].haikuBody}}</h1>
+					<h1 class="mainHaiku">{{haikusRandom[currentHaiku].haikuLine1}}</h1>
+					<h1 class="mainHaiku">{{haikusRandom[currentHaiku].haikuLine2}}</h1>
+					<h1 class="mainHaiku">{{haikusRandom[currentHaiku].haikuLine3}}</h1>
 			</main>
 			<footer>
 				<button class="more" ng-click="nextHaiku()">MORE HAIKUS</button>
@@ -42,14 +41,24 @@
 				<a class="brand" href="/#/home">HAIKU FOR YOU</a>	
 			</header>	
 			<form ng-submit="addHaiku()">
-				<input type="text" placeholder="Haiku" ng-model="haikuBody">
+				<input type="text" placeholder="Haiku Line 1:  5 Syllables" ng-model="haikuLine1">
+				<input type="text" placeholder="Haiku Line 2:  7 Syllables" ng-model="haikuLine2">
+				<input type="text" placeholder="Haiku Line 3:  5 Syllables" ng-model="haikuLine3">
 				<button type="submit">Post</button>
 			</form>
 
-
-		
-
 		</script>		
+	
+		<script type="text/ng-template" id="/admin.html">
+			<div ng-repeat="haiku in haikus"> 
+				<p>{{haiku.haikuLine1}}</p>
+				<p>{{haiku.haikuLine2}}</p>
+				<p>{{haiku.haikuLine3}}</p>
+				<button ng-click="deleteHaiku(haiku)">Delete this Haiku</button>
+			</div>
+		
+		
+		</script>
 		
 		
 		

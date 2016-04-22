@@ -1,8 +1,9 @@
 var mongoose = require('mongoose');
 
 var HaikuSchema = new mongoose.Schema({
-	haikuBody: String
-	
+	haikuLine1: String,
+	haikuLine2: String,
+	haikuLine3: String
 });
 
 mongoose.model('Haiku', HaikuSchema);

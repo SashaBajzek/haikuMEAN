@@ -19,6 +19,16 @@ app.config([
 				url:'/new',
 				templateUrl: '/new.html',
 				controller: 'createHaikuCtrl'
+			})
+			.state('admin', {
+				url:'/admin',
+				templateUrl: '/admin.html',
+				controller: 'manageHaikuCtrl',
+				resolve: {
+					postPromise: ['haikus', function(haikus){
+						return haikus.getAll();
+					}]
+				}
 			});
 		
 		$urlRouterProvider.otherwise('home');
@@ -32,8 +42,6 @@ app.controller('MainCtrl', [
 	function($scope, haikus) {
 		
 		$scope.haikus = haikus.haikus;
-		
-		//$scope.haikus = [{"_id":"5718531a8b8eb98602a37483","haikuBody":"test","__v":0},{"_id":"57185d4e990671ea0252e718","haikuBody":"First Haiku","__v":0},{"_id":"57185e68990671ea0252e719","haikuBody":"second","__v":0}]
 		
 		$scope.shuffle = function (array) {
 			var currentIndex = array.length, temporaryValue, randomIndex;
@@ -69,17 +77,6 @@ app.controller('MainCtrl', [
 ]);
 
 
-app.controller('ShowCtrl', [
-	'$scope', 
-	'haikus',
-	'$stateParams',
-	function($scope, $stateParams, haikus) {
-		
-		$scope.haikus = haikus.haikus;
-		
-	}
-]);
-
 app.controller('createHaikuCtrl', [
 	'$scope',
 	'$stateParams',
@@ -88,37 +85,66 @@ app.controller('createHaikuCtrl', [
 		$scope.haikus = haikus.haikus;
 		
 		$scope.addHaiku = function(){
-			if(!$scope.haikuBody || $scope.haikuBody === '')
+			if(!$scope.haikuLine1 || $scope.haikuLine1 === '' || !$scope.haikuLine2 || $scope.haikuLine2 === '' || !$scope.haikuLine3 || $scope.haikuLine3 === '')
 				{return;}
 			haikus.create({
-				haikuBody: $scope.haikuBody
+				haikuLine1: $scope.haikuLine1,
+				haikuLine2: $scope.haikuLine2,
+				haikuLine3: $scope.haikuLine3
 			});
 		
-			$scope.haikuBody = '';
+			$scope.haikuLine1 = '';
+			$scope.haikuLine2 = '';
+			$scope.haikuLine3 = '';
+		};		
+	}
+]);
+
+app.controller('manageHaikuCtrl', [
+	'$scope',
+	'$stateParams',
+	'haikus',
+	function($scope, $stateParams, haikus){
+		$scope.haikus = haikus.haikus;
+		
+		$scope.deleteHaiku = function(haiku){
+			
+		haikus.delete(haiku);
+
 		};		
 	}
 ]);
 
 app.factory('haikus', ['$http', function($http){
 	var o = {
-		haikus: []
+		haikus: []  //storing haikus in mongoDB
 	};
 	
+	//get all haikus
 	o.getAll = function() {
 		return $http.get('/haikus').success(function(data) {
 			angular.copy(data, o.haikus);
 		});
 	};
 	
+	//get single haiku
+	o.get = function(id) {
+		return $http.get('/haikus/' + id).then(function(res){
+			return res.data;
+		});
+	};
+	
+	//create new haiku
 	o.create = function(haiku) {
 		return $http.post('/haikus', haiku).success(function(data){
 			o.haikus.push(data);
 		});
 	};
 	
-	o.get = function(id) {
-		return $http.get('/haikus/' + id).then(function(res){
-			return res.data;
+	//delete single haiku
+	o.delete = function(haiku) {
+		return $http.delete('/haikus/'+haiku._id).success(function(data) {
+			angular.copy(data. o.haikus);
 		});
 	};
 	
