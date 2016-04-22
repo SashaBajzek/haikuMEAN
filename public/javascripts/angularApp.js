@@ -15,16 +15,6 @@ app.config([
 					}]
 				}
 			})
-			.state('show', {
-				url: '/home/{id}',
-				templateUrl: '/home.html',
-				controller: 'ShowCtrl'
-			})
-			.state('haikus', {
-				url: '/home/{id}',
-				templateUrl: '/home.html',
-				controller: 'ShowCtrl'
-			})
 			.state('new', {
 				url:'/new',
 				templateUrl: '/new.html',
@@ -42,6 +32,39 @@ app.controller('MainCtrl', [
 	function($scope, haikus) {
 		
 		$scope.haikus = haikus.haikus;
+		
+		//$scope.haikus = [{"_id":"5718531a8b8eb98602a37483","haikuBody":"test","__v":0},{"_id":"57185d4e990671ea0252e718","haikuBody":"First Haiku","__v":0},{"_id":"57185e68990671ea0252e719","haikuBody":"second","__v":0}]
+		
+		$scope.shuffle = function (array) {
+			var currentIndex = array.length, temporaryValue, randomIndex;
+			
+			//While there remain elements to shuffle
+			while (0 !== currentIndex) {
+				
+				//Pick a remaining element...
+				randomIndex = Math.floor(Math.random() * currentIndex);
+				currentIndex -=1;
+				
+				//And swap it with the current element
+				temporaryValue = array[currentIndex];
+				array[currentIndex] = array[randomIndex];
+				array[randomIndex] = temporaryValue;
+			}
+			
+			return array;
+		};
+		
+		$scope.haikusRandom = $scope.shuffle($scope.haikus);
+
+		$scope.currentHaiku = 0;
+		
+		$scope.nextHaiku = function(){
+			$scope.currentHaiku +=1;
+			if($scope.currentHaiku>=$scope.haikusRandom.length)
+			{$scope.currentHaiku = 0;}
+				 
+		};
+		
 	}
 ]);
 
@@ -90,6 +113,12 @@ app.factory('haikus', ['$http', function($http){
 	o.create = function(haiku) {
 		return $http.post('/haikus', haiku).success(function(data){
 			o.haikus.push(data);
+		});
+	};
+	
+	o.get = function(id) {
+		return $http.get('/haikus/' + id).then(function(res){
+			return res.data;
 		});
 	};
 	

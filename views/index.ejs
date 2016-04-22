@@ -15,33 +15,32 @@
 	
 	</head>
 	<body ng-app="haikuForYou" ng-controller="MainCtrl">
-			<header>
-				<h2 class="brand">HAIKU FOR YOU</h2>		
-			</header>
-		<div ng-repeat="haiku in haikus"> 
+	<!--	<div ng-repeat="haiku in haikus"> 
 			{{haiku.haikuBody}}
 		</div>
-		
+	-->	
 		<ui-view></ui-view>
 		
 		
 		<script type="text/ng-template" id="/home.html">
 			<header>
-				<buttom class="submit">SUBMIT A HAIKU</button>		
-			</header>
+				<h2 class="brand">HAIKU FOR YOU</h2>
+				<a class="submit" href="/#/new">SUBMIT A HAIKU</a>		
+			</header>		
 			<main>
-					<h1 class="mainHaiku">Fallen sick on a journey, In dreams I run wildly Over a withered moor.</h1>
+					<h1 class="mainHaiku">{{haikusRandom[currentHaiku].haikuBody}}</h1>
 			</main>
 			<footer>
-				<button class="more">MORE HAIKUS</button>
+				<button class="more" ng-click="nextHaiku()">MORE HAIKUS</button>
 			</footer>
 
 		</script>
 		
 		
-		
 		<script type="text/ng-template" id="/new.html">
-		
+			<header>
+				<a class="brand" href="/#/home">HAIKU FOR YOU</a>	
+			</header>	
 			<form ng-submit="addHaiku()">
 				<input type="text" placeholder="Haiku" ng-model="haikuBody">
 				<button type="submit">Post</button>
