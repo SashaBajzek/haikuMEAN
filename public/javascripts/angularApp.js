@@ -15,11 +15,14 @@ app.config([
 					}]
 				}
 			})
+			/*
+			//This is now in a modal
 			.state('new', {
 				url:'/new',
 				templateUrl: '/new.html',
 				controller: 'createHaikuCtrl'
 			})
+			*/
 			.state('admin', {
 				url:'/admin',
 				templateUrl: '/admin.html',
@@ -73,10 +76,32 @@ app.controller('MainCtrl', [
 				 
 		};
 		
+		
+		$scope.addHaiku = function(){
+			if(!$scope.haikuLine1 || $scope.haikuLine1 === '' || !$scope.haikuLine2 || $scope.haikuLine2 === '' || !$scope.haikuLine3 || $scope.haikuLine3 === '')
+				{return;}
+			haikus.create({
+				haikuLine1: $scope.haikuLine1,
+				haikuLine2: $scope.haikuLine2,
+				haikuLine3: $scope.haikuLine3
+			});
+		
+			$scope.haikuLine1 = '';
+			$scope.haikuLine2 = '';
+			$scope.haikuLine3 = '';
+			$('#newHaikuModal').modal('hide')
+		};
+		
+		
+		$scope.cantSubmit = function () {
+    return !$scope.haikuLine1 || $scope.haikuLine1 === '' || !$scope.haikuLine2 || $scope.haikuLine2 === '' || !$scope.haikuLine3 || $scope.haikuLine3 === '';
+  }
+		
 	}
 ]);
 
-
+/*
+//This is now in a modal
 app.controller('createHaikuCtrl', [
 	'$scope',
 	'$stateParams',
@@ -99,6 +124,7 @@ app.controller('createHaikuCtrl', [
 		};		
 	}
 ]);
+*/
 
 app.controller('manageHaikuCtrl', [
 	'$scope',
@@ -115,9 +141,11 @@ app.controller('manageHaikuCtrl', [
 	}
 ]);
 
+
+
 app.factory('haikus', ['$http', function($http){
 	var o = {
-		haikus: []  //storing haikus in mongoDB
+		haikus: []  //storing haikus in mongoDB 
 	};
 	
 	//get all haikus
@@ -144,7 +172,7 @@ app.factory('haikus', ['$http', function($http){
 	//delete single haiku
 	o.delete = function(haiku) {
 		return $http.delete('/haikus/'+haiku._id).success(function(data) {
-			angular.copy(data. o.haikus);
+			angular.copy(data, o.haikus);
 		});
 	};
 	

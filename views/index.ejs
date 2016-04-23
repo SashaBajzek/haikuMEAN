@@ -7,9 +7,12 @@
 		
 		<link href="/stylesheets/style.css" rel="stylesheet">
 		<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
-		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular-animate.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		
 		<script src="/javascripts/angularApp.js"></script>
 		<link href='https://fonts.googleapis.com/css?family=Merriweather|Open+Sans:300,800' rel='stylesheet' type='text/css'>
 	
@@ -18,11 +21,10 @@
 
 		<ui-view></ui-view>
 		
-		
 		<script type="text/ng-template" id="/home.html">
 			<header>
 				<h2 class="brand">HAIKU FOR YOU</h2>
-				<a class="submit" href="/#/new">SUBMIT A HAIKU</a>		
+				<button class="submit" data-toggle="modal" data-target="#newHaikuModal">SUBMIT A HAIKU</button>		
 			</header>		
 			<main>
 					<h1 class="mainHaiku">{{haikusRandom[currentHaiku].haikuLine1}}</h1>
@@ -32,10 +34,40 @@
 			<footer>
 				<button class="more" ng-click="nextHaiku()">MORE HAIKUS</button>
 			</footer>
+			
+
+			<!-- Modal -->
+			<div class="modal fade" id="newHaikuModal" tabindex="-1" role="dialog" aria-labelledby="newHaikuModalLabel">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+					
+						<form ng-submit="addHaiku()">
+
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+								<h4 class="modal-title" id="newHaikuModalLabel">Create a haiku</h4>
+							</div>
+							<div class="modal-body">
+
+								<input type="text" placeholder="Haiku Line 1:  5 Syllables" ng-model="haikuLine1">
+								<input type="text" placeholder="Haiku Line 2:  7 Syllables" ng-model="haikuLine2">
+								<input type="text" placeholder="Haiku Line 3:  5 Syllables" ng-model="haikuLine3">
+
+
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+								<button type="submit" class="btn btn-primary" ng-disabled="cantSubmit()">Submit Haiku</button>
+							</div>
+
+						</form>
+					</div>
+				</div>
+			</div>
 
 		</script>
 		
-		
+		<!-- This is now in a modal
 		<script type="text/ng-template" id="/new.html">
 			<header>
 				<a class="brand" href="/#/home">HAIKU FOR YOU</a>	
@@ -47,7 +79,9 @@
 				<button type="submit">Post</button>
 			</form>
 
-		</script>		
+		</script>	
+		-->
+
 	
 		<script type="text/ng-template" id="/admin.html">
 			<div ng-repeat="haiku in haikus"> 
