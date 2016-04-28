@@ -2,13 +2,26 @@
 	box-sizing: border-box;
 }
 
+*:hover {
+	box-sizing: border-box;
+}
+
+*:active {
+	box-sizing: border-box;
+}
+
+
+html {
+	height: 100%;
+}
+
 body {
 	display: relative;
 	flex-direction: column;
-	height: 280px;
+	height: 100%;
 	justify-content: space-between;
 	margin: 0 auto;
-	max-width: 640px;
+	max-width: 100%;
 	position: relative;
 }
 
@@ -20,8 +33,18 @@ header {
 ui-view {
 	display: flex;
 	flex-direction: column;
-	height: 300px;
+	height: 100%;
 	justify-content: space-between;
+	width: 100%;
+}
+
+main {
+	background-color: rgba(165, 165, 165, 0.8);
+	border-radius: 30px;
+	max-height:  640px;
+	margin: auto;
+	max-width:  640px;
+	transition: all 3s ease-in-out;
 }
 
 .mainHaiku {
@@ -34,6 +57,7 @@ ui-view {
 	margin: auto;
 	max-width:  640px;
 	padding: 25px;
+	text-align: center;
 }
 
 .brand, .more {
@@ -45,17 +69,453 @@ ui-view {
 .brand {
 	color: #A5A5A5;
 	letter-spacing: 15px;
+	transition: all 1s ease-in-out;
 }
 
 .more {
 	border: none;
+	box-sizing: border-box;
 	color: #000000;
 	letter-spacing: 4px;
+	transition: all 0.1s ease;
 }
 
 .submit {
 	color: #000000;
-	
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 300;
+}
+
+.brand:hover {
+	transform: scale(1.1);
+	transform-origin: center left;
+}
+
+.beachTheme {
+	background: blue;
+	background-image: url("/images/beach.jpg");
+}
+
+.beachTheme .brand:hover {
+	color: purple;
+}
+
+.beachTheme main:hover {
+	border: 1px solid;
+	border-color: rgba(128, 0, 128, 0.5);
+	background-color: rgba(128, 0, 128, 0.5);
+}
+
+.beachTheme .more:hover {
+	border: 1px solid;
+	border-color: rgba(128, 0, 128, 0.5);
+}
+
+.beachTheme .more:active {
+	border: 1px solid;
+	border-color: rgba(128, 0, 128, 0.5);
+	background-color: rgba(128, 0, 128, 0.5);
+}
+
+.careerTheme {
+	background: blue;
+	background-image: url("/images/career.jpg");
+}
+
+.careerTheme .brand:hover {
+	color: fuchsia;
+}
+
+.careerTheme main:hover {
+	border: 1px solid;
+	border-color: rgba(255, 0, 255, 0.5);
+	background-color: rgba(255, 0, 255, 0.5);
+}
+
+.careerTheme .more:active{
+	background-color: rgba(255, 0, 255, 0.5);
+}
+
+.catTheme {
+	background: blue;
+	background-image: url("/images/cat.jpg");
+}
+
+.catTheme .brand:hover {
+	color: turquoise;
+}
+
+.catTheme main:hover {
+	border: 1px solid;
+	border-color: rgba(64, 224, 208, 0.5);
+	background-color: rgba(64, 224, 208, 0.5);
+}
+
+.catTheme .more:active{
+	background-color: rgba(64, 224, 208, 0.5);
+}
+
+.cheersTheme {
+	background: blue;
+	background-image: url("/images/cheers.jpg");
+}
+
+.cheersTheme .brand:hover {
+	color: darkmagenta;
+}
+
+.cheersTheme main:hover {
+	border: 1px solid;
+	border-color: rgba(139, 0, 139, 0.5);
+	background-color: rgba(139, 0, 139, 0.5);
+}
+
+.cheersTheme .more:active{
+	background-color: rgba(139, 0, 139, 0.5);
+}
+
+.childhoodTheme {
+	background: blue;
+	background-image: url("/images/childhood.jpg");
+}
+
+.childhoodTheme .brand:hover {
+	color: deeppink;
+}
+
+.childhoodTheme main:hover {
+	border: 1px solid;
+	border-color: rgba(255, 20, 147, 0.5);
+	background-color: rgba(255, 20, 147, 0.5);
+}
+
+.childhoodTheme .more:active{
+	background-color: rgba(255, 20, 147, 0.5);
+}
+
+.coffeeTheme {
+	background: blue;
+	background-image: url("/images/coffee.jpg");
+}
+
+.coffeeTheme .brand:hover {
+	color: gold;
+}
+
+.coffeeTheme main:hover {
+	border: 1px solid;
+	border-color: rgba(255, 215, 0, 0.5);
+	background-color: rgba(255, 215, 0, 0.5);
+}
+
+.coffeeTheme .more:active{
+	background-color: rgba(255, 215, 0, 0.5);
+}
+
+.dogTheme {
+	background: blue;
+	background-image: url("/images/dog.jpg");
+}
+
+.dogTheme .brand:hover {
+	color: mediumorchid;
+}
+
+.dogTheme main:hover {
+	border: 1px solid;
+	border-color: rgba(186, 85, 211, 0.5);
+	background-color: rgba(186, 85, 211, 0.5);
+}
+
+.dogTheme .more:active{
+	background-color: rgba(186, 85, 211, 0.5);
+}
+
+.fantasyTheme {
+	background: blue;
+	background-image: url("/images/fantasy.jpg");
+}
+
+.fantasyTheme .brand:hover {
+	color: orangered;
+}
+
+.fantasyTheme main:hover {
+	border: 1px solid;
+	border-color: rgba(255, 69, 0, 0.5);
+	background-color: rgba(255, 69, 0, 0.5);
+}
+
+.fantasyTheme .more:active{
+	background-color: rgba(255, 69, 0, 0.5);
+}
+
+.fitnessTheme {
+	background: blue;
+	background-image: url("/images/fitness.jpg");
+}
+
+.fitnessTheme .brand:hover {
+	color: deeppink;
+}
+
+.fitnessTheme main:hover {
+	border: 1px solid;
+	border-color: rgba(255, 20, 147, 0.5);
+	background-color: rgba(255, 20, 147, 0.5);
+}
+
+.fitnessTheme .more:active{
+	background-color: rgba(255, 20, 147, 0.5);
+}
+
+.foodTheme {
+	background: blue;
+	background-image: url("/images/food.jpg");
+}
+
+.foodTheme .brand:hover {
+	color: midnightblue;
+}
+
+.foodTheme main:hover {
+	border: 1px solid;
+	border-color: rgba(25, 25, 112, 0.5);
+	background-color: rgba(25, 25, 112, 0.5);
+}
+
+.foodTheme .more:active{
+	background-color: rgba(25, 25, 112, 0.5);
+}
+
+.happyTheme {
+	background: yellow;
+	background-image: url("/images/happy.jpg");
+}
+
+.happyTheme .brand:hover {
+	color: tomato;
+}
+
+.happyTheme main:hover {
+	border: 1px solid;
+	border-color: rgba(255, 99, 71, 0.5);
+	background-color: rgba(255, 99, 71, 0.5);
+}
+
+.happyTheme .more:active{
+	background-color: rgba(255, 99, 71, 0.5);
+}
+
+.musicTheme {
+	background: yellow;
+	background-image: url("/images/music.jpg");
+}
+
+.musicTheme .brand:hover {
+	color: royalblue;
+}
+
+.musicTheme main:hover {
+	border: 1px solid;
+	border-color: rgba(65, 105, 225, 0.5);
+	background-color: rgba(65, 105, 225, 0.5);
+}
+
+.musicTheme .more:active{
+	background-color: rgba(65, 105, 225, 0.5);
+}
+
+.natureTheme {
+	background: yellow;
+	background-image: url("/images/nature.jpg");
+}
+
+.natureTheme .brand:hover {
+	color: crimson;
+}
+
+.natureTheme main:hover {
+	border: 1px solid;
+	border-color: rgba(220, 20, 60, 0.5);
+	background-color: rgba(220, 20, 60, 0.5);
+}
+
+.natureTheme .more:active{
+	background-color: rgba(220, 20, 60, 0.5);
+}
+
+.painTheme {
+	background: yellow;
+	background-image: url("/images/pain.jpg");
+}
+
+.painTheme .brand:hover {
+	color: firebrick;
+}
+
+.painTheme main:hover {
+	border: 1px solid;
+	border-color: rgba(178, 34, 34, 0.5);
+	background-color: rgba(178, 34, 34, 0.5);
+}
+
+.painTheme .more:active{
+	background-color: rgba(220, 20, 60, 0.5);
+}
+
+.romanceTheme {
+	background: crimson;
+	background-image: url("/images/romance.jpg");
+}
+
+.romanceTheme .brand:hover {
+	color: teal;
+}
+
+.romanceTheme main:hover {
+	border: 1px solid;
+	border-color: rgba(0, 128, 128, 0.5);
+	background-color: rgba(0, 128, 128, 0.5);
+}
+
+.romanceTheme .more:active{
+	background-color: rgba(0, 128, 128, 0.5);
+}
+
+.somberTheme {
+	background: grey;
+	background-image: url("/images/somber.jpg");
+}
+
+.somberTheme .brand:hover {
+	color: lightcoral;
+}
+
+.somberTheme main:hover {
+	border: 1px solid;
+	border-color: rgba(240, 128, 128, 0.5);
+	background-color: rgba(240, 128, 128, 0.5);
+}
+
+.somberTheme .more:active{
+	background-color: rgba(240, 128, 128, 0.5);
+}
+
+.stormTheme {
+	background: grey;
+	background-image: url("/images/storm.jpg");
+}
+
+.stormTheme .brand:hover {
+	color: orangered;
+}
+
+.stormTheme main:hover {
+	border: 1px solid;
+	border-color: rgba(255, 69, 0, 0.5);
+	background-color: rgba(255, 69, 0, 0.5);
+}
+
+.stormTheme .more:active{
+	background-color: rgba(255, 69, 0, 0.5);
+}
+
+.technologyTheme {
+	background: grey;
+	background-image: url("/images/technology.jpg");
+}
+
+.technologyTheme .brand:hover {
+	color: springgreen;
+}
+
+.technologyTheme main:hover {
+	border: 1px solid;
+	border-color: rgba(0, 255, 127, 0.5);
+	background-color: rgba(0, 255, 127, 0.5);
+}
+
+.technologyTheme .more:active{
+	background-color: rgba(0, 255, 127, 0.5);
+}
+
+.travelTheme {
+	background: grey;
+	background-image: url("/images/travel.jpg");
+}
+
+.travelTheme .brand:hover {
+	color: crimson;
+}
+
+.travelTheme main:hover {
+	border: 1px solid;
+	border-color: rgba(220, 20, 60, 0.5);
+	background-color: rgba(220, 20, 60, 0.5);
+}
+
+.travelTheme .more:active{
+	background-color: rgba(220, 20, 60, 0.5);
+}
+
+.whimsyTheme {
+	background: purple;
+	background-image: url("/images/whimsy.jpg");
+}
+
+.whimsyTheme .brand:hover {
+	color: tomato;
+}
+
+.whimsyTheme main:hover {
+	border: 1px solid;
+	border-color: rgba(255, 99, 71, 0.5);
+	background-color: rgba(255, 99, 71, 0.5);
+}
+
+.whimsyTheme .more:active{
+	background-color: rgba(255, 99, 71, 0.5);
+}
+
+.themes {
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+.admin {
+	background-color: rgba(165, 165, 165, 1);
+	margin: auto;
+	max-width:  640px;
+	padding: 5px;
+}
+
+.close {
+	transition: all 4s ease-out;
+}
+
+.close:hover {
+	color: crimson;
+	transform: rotate(360deg) scale(1.5);
+}
+
+.modal-title {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 800;
+}
+
+.modal-body input {
+	margin: 5px auto;
+	text-align: center;
+	width: 75%;
+}
+
+.modal-footer button {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+}
+
+.form-group label {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 800;
 }

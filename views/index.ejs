@@ -19,7 +19,7 @@
 	</head>
 	<body ng-app="haikuForYou" ng-controller="MainCtrl">
 
-		<ui-view></ui-view>
+		<ui-view class="{{haikusRandom[currentHaiku].haikuTheme}} themes"></ui-view>
 		
 		<script type="text/ng-template" id="/home.html">
 			<header>
@@ -44,20 +44,48 @@
 						<form ng-submit="addHaiku()">
 
 							<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-								<h4 class="modal-title" id="newHaikuModalLabel">Create a haiku</h4>
+								<button ng-click="clearFields()" type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+								<h4 class="modal-title" id="newHaikuModalLabel">CREATE A HAIKU</h4>
 							</div>
 							<div class="modal-body">
 
-								<input type="text" placeholder="Haiku Line 1:  5 Syllables" ng-model="haikuLine1">
-								<input type="text" placeholder="Haiku Line 2:  7 Syllables" ng-model="haikuLine2">
-								<input type="text" placeholder="Haiku Line 3:  5 Syllables" ng-model="haikuLine3">
-
+								<input type="text" placeholder="Haiku Line 1:  5 Syllables" ng-model="haikuLine1" required>
+								<br>
+								<input type="text" placeholder="Haiku Line 2:  7 Syllables" ng-model="haikuLine2" required>
+								<br>
+								<input type="text" placeholder="Haiku Line 3:  5 Syllables" ng-model="haikuLine3" required>
+								<br>
+								<div class="form-group">
+									<label for="haikuTheme">HAIKU BACKGROUND THEME:</label>
+									<select class="form-control" id="theme" ng-model="haikuTheme" required>
+										<option value="" disabled selected hidden>Please Choose...</option>
+										<option value="beachTheme">Beach</option>
+										<option value="careerTheme">Career</option>
+										<option value="catTheme">Cat</option>
+										<option value="cheersTheme">Cheers</option>
+										<option value="childhoodTheme">Childhood</option>
+										<option value="coffeeTheme">Coffee</option>
+										<option value="dogTheme">Dog</option>
+										<option value="fantasyTheme">Fantasy</option>
+										<option value="fitnessTheme">Fitness</option>
+										<option value="foodTheme">Food</option>
+										<option value="happyTheme">Happy</option>
+										<option value="musicTheme">Music</option>
+										<option value="natureTheme">Nature</option>
+										<option value="painTheme">Pain</option>
+										<option value="romanceTheme">Romance</option>
+										<option value="somberTheme">Somber</option>
+										<option value="stormTheme">Storm</option>
+										<option value="technologyTheme">Technology</option>
+										<option value="travelTheme">Travel</option>
+										<option value="whimsyTheme">Whimsy</option>
+									</select>
+								</div>
 
 							</div>
 							<div class="modal-footer">
-								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-								<button type="submit" class="btn btn-primary" ng-disabled="cantSubmit()">Submit Haiku</button>
+								<button ng-click="clearFields()" type="button" class="btn btn-default" data-dismiss="modal">CLOSE</button>
+								<button type="submit" class="btn btn-primary" ng-disabled="cantSubmit()">SUBMIT HAIKU</button>
 							</div>
 
 						</form>
@@ -66,25 +94,9 @@
 			</div>
 
 		</script>
-		
-		<!-- This is now in a modal
-		<script type="text/ng-template" id="/new.html">
-			<header>
-				<a class="brand" href="/#/home">HAIKU FOR YOU</a>	
-			</header>	
-			<form ng-submit="addHaiku()">
-				<input type="text" placeholder="Haiku Line 1:  5 Syllables" ng-model="haikuLine1">
-				<input type="text" placeholder="Haiku Line 2:  7 Syllables" ng-model="haikuLine2">
-				<input type="text" placeholder="Haiku Line 3:  5 Syllables" ng-model="haikuLine3">
-				<button type="submit">Post</button>
-			</form>
-
-		</script>	
-		-->
-
 	
 		<script type="text/ng-template" id="/admin.html">
-			<div ng-repeat="haiku in haikus"> 
+			<div class="admin" ng-repeat="haiku in haikus"> 
 				<p>{{haiku.haikuLine1}}</p>
 				<p>{{haiku.haikuLine2}}</p>
 				<p>{{haiku.haikuLine3}}</p>

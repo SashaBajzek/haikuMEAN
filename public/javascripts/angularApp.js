@@ -15,14 +15,6 @@ app.config([
 					}]
 				}
 			})
-			/*
-			//This is now in a modal
-			.state('new', {
-				url:'/new',
-				templateUrl: '/new.html',
-				controller: 'createHaikuCtrl'
-			})
-			*/
 			.state('admin', {
 				url:'/admin',
 				templateUrl: '/admin.html',
@@ -76,55 +68,35 @@ app.controller('MainCtrl', [
 				 
 		};
 		
+		$scope.clearFields = function(){
+			$scope.haikuLine1 = '';
+			$scope.haikuLine2 = '';
+			$scope.haikuLine3 = '';
+			$scope.haikuTheme = '';
+		};
 		
 		$scope.addHaiku = function(){
-			if(!$scope.haikuLine1 || $scope.haikuLine1 === '' || !$scope.haikuLine2 || $scope.haikuLine2 === '' || !$scope.haikuLine3 || $scope.haikuLine3 === '')
+			if(!$scope.haikuLine1 || $scope.haikuLine1 === '' || !$scope.haikuLine2 || $scope.haikuLine2 === '' || !$scope.haikuLine3 || $scope.haikuLine3 === '' || !$scope.haikuTheme || $scope.haikuTheme === '')
 				{return;}
 			haikus.create({
 				haikuLine1: $scope.haikuLine1,
 				haikuLine2: $scope.haikuLine2,
-				haikuLine3: $scope.haikuLine3
+				haikuLine3: $scope.haikuLine3,
+				haikuTheme: $scope.haikuTheme
 			});
 		
-			$scope.haikuLine1 = '';
-			$scope.haikuLine2 = '';
-			$scope.haikuLine3 = '';
-			$('#newHaikuModal').modal('hide')
+			$scope.clearFields();
+			$('#newHaikuModal').modal('hide');
 		};
 		
 		
 		$scope.cantSubmit = function () {
-    return !$scope.haikuLine1 || $scope.haikuLine1 === '' || !$scope.haikuLine2 || $scope.haikuLine2 === '' || !$scope.haikuLine3 || $scope.haikuLine3 === '';
+    return !$scope.haikuLine1 || $scope.haikuLine1 === '' || !$scope.haikuLine2 || $scope.haikuLine2 === '' || !$scope.haikuLine3 || $scope.haikuLine3 === '' || !$scope.haikuTheme || $scope.haikuTheme === '';
   }
 		
 	}
 ]);
 
-/*
-//This is now in a modal
-app.controller('createHaikuCtrl', [
-	'$scope',
-	'$stateParams',
-	'haikus',
-	function($scope, $stateParams, haikus){
-		$scope.haikus = haikus.haikus;
-		
-		$scope.addHaiku = function(){
-			if(!$scope.haikuLine1 || $scope.haikuLine1 === '' || !$scope.haikuLine2 || $scope.haikuLine2 === '' || !$scope.haikuLine3 || $scope.haikuLine3 === '')
-				{return;}
-			haikus.create({
-				haikuLine1: $scope.haikuLine1,
-				haikuLine2: $scope.haikuLine2,
-				haikuLine3: $scope.haikuLine3
-			});
-		
-			$scope.haikuLine1 = '';
-			$scope.haikuLine2 = '';
-			$scope.haikuLine3 = '';
-		};		
-	}
-]);
-*/
 
 app.controller('manageHaikuCtrl', [
 	'$scope',
