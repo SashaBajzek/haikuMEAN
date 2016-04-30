@@ -38,7 +38,7 @@ app.controller('MainCtrl', [
 		
 		$scope.haikus = haikus.haikus;
 		
-		$scope.shuffle = function (array) {
+		var shuffle = function (array) {
 			var currentIndex = array.length, temporaryValue, randomIndex;
 			
 			//While there remain elements to shuffle
@@ -57,14 +57,16 @@ app.controller('MainCtrl', [
 			return array;
 		};
 		
-		$scope.haikusRandom = $scope.shuffle($scope.haikus);
+		$scope.haikusRandom = shuffle($scope.haikus);
 
 		$scope.currentHaiku = 0;
 		
 		$scope.nextHaiku = function(){
 			$scope.currentHaiku +=1;
-			if($scope.currentHaiku>=$scope.haikusRandom.length)
-			{$scope.currentHaiku = 0;}
+			if($scope.currentHaiku >= $scope.haikusRandom.length)
+			{
+				$scope.currentHaiku = 0;
+			}
 				 
 		};
 		
@@ -76,8 +78,6 @@ app.controller('MainCtrl', [
 		};
 		
 		$scope.addHaiku = function(){
-			if(!$scope.haikuLine1 || $scope.haikuLine1 === '' || !$scope.haikuLine2 || $scope.haikuLine2 === '' || !$scope.haikuLine3 || $scope.haikuLine3 === '' || !$scope.haikuTheme || $scope.haikuTheme === '')
-				{return;}
 			haikus.create({
 				haikuLine1: $scope.haikuLine1,
 				haikuLine2: $scope.haikuLine2,
@@ -88,12 +88,6 @@ app.controller('MainCtrl', [
 			$scope.clearFields();
 			$('#newHaikuModal').modal('hide');
 		};
-		
-		
-		$scope.cantSubmit = function () {
-    return !$scope.haikuLine1 || $scope.haikuLine1 === '' || !$scope.haikuLine2 || $scope.haikuLine2 === '' || !$scope.haikuLine3 || $scope.haikuLine3 === '' || !$scope.haikuTheme || $scope.haikuTheme === '';
-  }
-		
 	}
 ]);
 
@@ -144,7 +138,7 @@ app.factory('haikus', ['$http', function($http){
 	//delete single haiku
 	o.delete = function(haiku) {
 		return $http.delete('/haikus/'+haiku._id).success(function(data) {
-			angular.copy(data, o.haikus);
+			angular.copy(data, o.haikus); //recommended to not refresh haiku list since this would erase anything you changed in views.  Instead, should return nothing & you should splice out the deleted haiku
 		});
 	};
 	

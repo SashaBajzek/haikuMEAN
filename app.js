@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 require('./models/Haikus');
 
-mongoose.connect('mongodb://localhost/haikus'); //not sure about the haikus part  this is the connection to MongoDB
+mongoose.connect('mongodb://localhost/haikus'); //this is the connection to MongoDB
 
 var routes = require('./routes/index');
 var users = require('./routes/users');

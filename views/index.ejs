@@ -41,7 +41,7 @@
 				<div class="modal-dialog" role="document">
 					<div class="modal-content">
 					
-						<form ng-submit="addHaiku()">
+						<form ng-submit="addHaiku()" name="createHaikuForm">
 
 							<div class="modal-header">
 								<button ng-click="clearFields()" type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -49,15 +49,15 @@
 							</div>
 							<div class="modal-body">
 
-								<input type="text" placeholder="Haiku Line 1:  5 Syllables" ng-model="haikuLine1" required>
+								<input type="text" placeholder="Haiku Line 1:  5 Syllables" ng-model="haikuLine1" name="haikuLine1" required>
 								<br>
-								<input type="text" placeholder="Haiku Line 2:  7 Syllables" ng-model="haikuLine2" required>
+								<input type="text" placeholder="Haiku Line 2:  7 Syllables" ng-model="haikuLine2" name="haikuLine2" required>
 								<br>
-								<input type="text" placeholder="Haiku Line 3:  5 Syllables" ng-model="haikuLine3" required>
+								<input type="text" placeholder="Haiku Line 3:  5 Syllables" ng-model="haikuLine3" name="haikuLine3" required>
 								<br>
 								<div class="form-group">
 									<label for="haikuTheme">HAIKU BACKGROUND THEME:</label>
-									<select class="form-control" id="theme" ng-model="haikuTheme" required>
+									<select class="form-control" id="theme" ng-model="haikuTheme" name="haikuTheme" required>
 										<option value="" disabled selected hidden>Please Choose...</option>
 										<option value="beachTheme">Beach</option>
 										<option value="careerTheme">Career</option>
@@ -84,10 +84,9 @@
 
 							</div>
 							<div class="modal-footer">
-								<button ng-click="clearFields()" type="button" class="btn btn-default" data-dismiss="modal">CLOSE</button>
-								<button type="submit" class="btn btn-primary" ng-disabled="cantSubmit()">SUBMIT HAIKU</button>
+								<button ng-click="clearFields()" type="button" class="btn btn-default" data-dismiss="modal" >CLOSE</button>
+								<button type="submit" class="btn btn-primary" ng-disabled="createHaikuForm.$invalid" >SUBMIT HAIKU</button>
 							</div>
-
 						</form>
 					</div>
 				</div>
