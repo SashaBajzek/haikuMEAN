@@ -1,4 +1,4 @@
-var app = angular.module('haikuForYou', ['ui.router']);
+var app = angular.module('haikuForYou', ['ui.router', 'ui.bootstrap']);
 
 app.config([
 	'$stateProvider',
@@ -33,7 +33,6 @@ app.config([
 app.controller('MainCtrl', [
 	'$scope', 
 	'haikus',
-	
 	function($scope, haikus) {
 		
 		$scope.haikus = haikus.haikus;
@@ -91,6 +90,10 @@ app.controller('MainCtrl', [
 	}
 ]);
 
+app.controller('ModalCtrl', function($scope, $modal){
+	
+});
+
 
 app.controller('manageHaikuCtrl', [
 	'$scope',
@@ -109,7 +112,9 @@ app.controller('manageHaikuCtrl', [
 
 
 
-app.factory('haikus', ['$http', function($http){
+app.factory('haikus', [
+	'$http', 
+	function($http){
 	var o = {
 		haikus: []  //storing haikus in mongoDB 
 	};

@@ -7,60 +7,68 @@ html {
 }
 
 body {
-	display: relative;
-	flex-direction: column;
 	height: 100%;
-	justify-content: space-between;
-	margin: 0 auto;
-	max-width: 100%;
-	position: relative;
-}
-
-header {
-	display: flex;
-	justify-content: space-between;
 }
 
 ui-view {
 	display: flex;
 	flex-direction: column;
 	height: 100%;
-	justify-content: space-between;
-	width: 100%;
+}
+
+.brand {
+	color: #A5A5A5;
+	font-size: 30px;
+	height: 37px;
+	letter-spacing: 10px;
+	padding: 0 0 0 10px;
+	text-align: center;
+	transition: all 1s ease-in-out;
+	width: 390px;
+}
+
+.brand:hover {
+	transform: scale(1.1);
+	transform-origin: center center;
+}
+
+.submit {
+	color: #000000;
+	display: block;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	height: 37px;
+	margin: 25px auto 0 auto;
+	width: 122px;
 }
 
 main {
 	background-color: rgba(165, 165, 165, 0.8);
 	border-radius: 30px;
-	max-height:  640px;
 	margin: auto;
-	max-width:  640px;
 	transition: all 3s ease-in-out;
 }
 
 .mainHaiku {
-	align-items: center;
 	color: #000000;
-	display: absolute;
 	font-family: 'Merriweather', serif;
+	font-size: 30px;
 	font-weight: 300;
-	max-height:  640px;
 	margin: auto;
-	max-width:  640px;
-	padding: 25px;
+	padding: 10px;
 	text-align: center;
 }
 
 .brand, .more {
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 800;
-	margin: 0;
+	margin: 0 auto;
 }
 
-.brand {
-	color: #A5A5A5;
-	letter-spacing: 15px;
-	transition: all 1s ease-in-out;
+footer {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
 }
 
 .more {
@@ -68,28 +76,22 @@ main {
 	color: #000000;
 	height: 25px;
 	letter-spacing: 4px;
+	padding: 2px 0 2px 4px;
 	transition: all 0.1s ease;
+	width: 160px;
 }
 
 .more:focus {
 	outline: none;
 }
 
-.submit {
-	color: #000000;
-	font-family: 'Open Sans', sans-serif;
-	font-weight: 300;
-}
 
-.brand:hover {
-	transform: scale(1.1);
-	transform-origin: center left;
-}
+
 
 
 .beachTheme {
 	background: skyblue;
-	background-image: url("/images/beach.jpg");
+	background-image: url("/images/beach_sm.jpg");
 }
 
 .beachTheme .brand:hover {
@@ -110,7 +112,7 @@ main {
 
 .careerTheme {
 	background: blue;
-	background-image: url("/images/career.jpg");
+	background-image: url("/images/career_sm.jpg");
 }
 
 .careerTheme .brand:hover {
@@ -132,7 +134,7 @@ main {
 
 .catTheme {
 	background: blue;
-	background-image: url("/images/cat.jpg");
+	background-image: url("/images/cat_sm.jpg");
 }
 
 .catTheme .brand:hover {
@@ -154,7 +156,7 @@ main {
 
 .cheersTheme {
 	background: blue;
-	background-image: url("/images/cheers.jpg");
+	background-image: url("/images/cheers_sm.jpg");
 }
 
 .cheersTheme .brand:hover {
@@ -175,7 +177,7 @@ main {
 
 .childhoodTheme {
 	background: blue;
-	background-image: url("/images/childhood.jpg");
+	background-image: url("/images/childhood_sm.jpg");
 }
 
 .childhoodTheme .brand:hover {
@@ -196,7 +198,7 @@ main {
 
 .coffeeTheme {
 	background: blue;
-	background-image: url("/images/coffee.jpg");
+	background-image: url("/images/coffee_sm.jpg");
 }
 
 .coffeeTheme .brand:hover {
@@ -217,7 +219,7 @@ main {
 
 .dogTheme {
 	background: blue;
-	background-image: url("/images/dog.jpg");
+	background-image: url("/images/dog_sm.jpg");
 }
 
 .dogTheme .brand:hover {
@@ -238,7 +240,7 @@ main {
 
 .fantasyTheme {
 	background: blue;
-	background-image: url("/images/fantasy.jpg");
+	background-image: url("/images/fantasy_sm.jpg");
 }
 
 .fantasyTheme .brand:hover {
@@ -259,7 +261,7 @@ main {
 
 .fitnessTheme {
 	background: blue;
-	background-image: url("/images/fitness.jpg");
+	background-image: url("/images/fitness_sm.jpg");
 }
 
 .fitnessTheme .brand:hover {
@@ -280,7 +282,7 @@ main {
 
 .foodTheme {
 	background: blue;
-	background-image: url("/images/food.jpg");
+	background-image: url("/images/food_sm.jpg");
 }
 
 .foodTheme .brand:hover {
@@ -301,7 +303,7 @@ main {
 
 .happyTheme {
 	background: yellow;
-	background-image: url("/images/happy.jpg");
+	background-image: url("/images/happy_sm.jpg");
 }
 
 .happyTheme .brand:hover {
@@ -322,7 +324,7 @@ main {
 
 .musicTheme {
 	background: yellow;
-	background-image: url("/images/music.jpg");
+	background-image: url("/images/music_sm.jpg");
 }
 
 .musicTheme .brand:hover {
@@ -343,7 +345,7 @@ main {
 
 .natureTheme {
 	background: yellow;
-	background-image: url("/images/nature.jpg");
+	background-image: url("/images/nature_sm.jpg");
 }
 
 .natureTheme .brand:hover {
@@ -364,7 +366,7 @@ main {
 
 .painTheme {
 	background: yellow;
-	background-image: url("/images/pain.jpg");
+	background-image: url("/images/pain_sm.jpg");
 }
 
 .painTheme .brand:hover {
@@ -385,7 +387,7 @@ main {
 
 .romanceTheme {
 	background: crimson;
-	background-image: url("/images/romance.jpg");
+	background-image: url("/images/romance_sm.jpg");
 }
 
 .romanceTheme .brand:hover {
@@ -406,7 +408,7 @@ main {
 
 .somberTheme {
 	background: grey;
-	background-image: url("/images/somber.jpg");
+	background-image: url("/images/somber_sm.jpg");
 }
 
 .somberTheme .brand:hover {
@@ -427,7 +429,7 @@ main {
 
 .stormTheme {
 	background: grey;
-	background-image: url("/images/storm.jpg");
+	background-image: url("/images/storm_sm.jpg");
 }
 
 .stormTheme .brand:hover {
@@ -448,7 +450,7 @@ main {
 
 .technologyTheme {
 	background: grey;
-	background-image: url("/images/technology.jpg");
+	background-image: url("/images/technology_sm.jpg");
 }
 
 .technologyTheme .brand:hover {
@@ -469,7 +471,7 @@ main {
 
 .travelTheme {
 	background: grey;
-	background-image: url("/images/travel.jpg");
+	background-image: url("/images/travel_sm.jpg");
 }
 
 .travelTheme .brand:hover {
@@ -490,7 +492,7 @@ main {
 
 .whimsyTheme {
 	background: purple;
-	background-image: url("/images/whimsy.jpg");
+	background-image: url("/images/whimsy_sm.jpg");
 }
 
 .whimsyTheme .brand:hover {
@@ -551,3 +553,141 @@ main {
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 800;
 }
+
+@media only screen and (min-width: 640px) {
+	
+	header {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		margin: 0;
+	}
+	
+	.brand {
+		color: #A5A5A5;
+		margin: 0;
+		padding: 2px 0 2px 15px;
+		transition: all 1s ease-in-out;
+	}
+	
+	.brand:hover {
+		transform: scale(1.1);
+		transform-origin: center left;
+	}
+	
+	.submit {
+		display: inline-block;
+		margin: 0;
+}
+
+	.mainHaiku {
+		padding: 25px;
+	}
+	
+	.more {
+		margin: 0;
+	}
+	
+	footer {
+		justify-content: flex-start;
+	}
+	
+	
+	
+	.beachTheme {
+		background-image: url("/images/beach.jpg");
+	}
+
+	.careerTheme {
+		background-image: url("/images/career.jpg");
+	}
+
+	.catTheme {
+		background-image: url("/images/cat.jpg");
+	}
+
+	.cheersTheme {
+		background-image: url("/images/cheers.jpg");
+	}
+
+	.childhoodTheme {
+		background-image: url("/images/childhood.jpg");
+	}
+
+	.coffeeTheme {
+		background-image: url("/images/coffee.jpg");
+	}
+
+	.dogTheme {
+		background-image: url("/images/dog.jpg");
+	}
+
+	.fantasyTheme {
+		background-image: url("/images/fantasy.jpg");
+	}
+
+	.fitnessTheme {
+		background-image: url("/images/fitness.jpg");
+	}
+
+	.foodTheme {
+		background-image: url("/images/food.jpg");
+	}
+
+	.happyTheme {
+		background-image: url("/images/happy.jpg");
+	}
+
+	.musicTheme {
+		background-image: url("/images/music.jpg");
+	}
+
+	.natureTheme {
+		background-image: url("/images/nature.jpg");
+	}
+
+	.painTheme {
+		background-image: url("/images/pain.jpg");
+	}
+
+	.romanceTheme {
+		background-image: url("/images/romance.jpg");
+	}
+
+	.somberTheme {
+		background-image: url("/images/somber.jpg");
+	}
+
+	.stormTheme {
+		background-image: url("/images/storm.jpg");
+	}
+
+	.technologyTheme {
+		background-image: url("/images/technology.jpg");
+	}
+
+	.travelTheme {
+		background-image: url("/images/travel.jpg");
+	}
+
+	.whimsyTheme {
+		background-image: url("/images/whimsy.jpg");
+	}
+
+
+	
+}
+
+@media only screen and (min-width: 450px) {
+	.brand {
+		letter-spacing: 15px;
+		padding: 0;
+		width: 450px;
+	}
+	
+	.mainHaiku {
+		font-size: 36px;
+	}
+	
+}
+
