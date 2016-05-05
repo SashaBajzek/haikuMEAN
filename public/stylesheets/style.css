@@ -28,7 +28,7 @@ ui-view {
 }
 
 .brand:hover {
-	transform: scale(1.1);
+	transform: scale(1.02);
 	transform-origin: center center;
 }
 
@@ -564,7 +564,6 @@ footer {
 	}
 	
 	.brand {
-		color: #A5A5A5;
 		margin: 0;
 		padding: 2px 0 2px 15px;
 		transition: all 1s ease-in-out;
@@ -679,6 +678,7 @@ footer {
 }
 
 @media only screen and (min-width: 450px) {
+	
 	.brand {
 		letter-spacing: 15px;
 		padding: 0;

@@ -33,7 +33,8 @@ app.config([
 app.controller('MainCtrl', [
 	'$scope', 
 	'haikus',
-	function($scope, haikus) {
+	'$uibModal',
+	function($scope, haikus, $uibModal) {
 		
 		$scope.haikus = haikus.haikus;
 		
@@ -65,34 +66,54 @@ app.controller('MainCtrl', [
 			if($scope.currentHaiku >= $scope.haikusRandom.length)
 			{
 				$scope.currentHaiku = 0;
-			}
-				 
+			}	 
 		};
 		
-		$scope.clearFields = function(){
-			$scope.haikuLine1 = '';
-			$scope.haikuLine2 = '';
-			$scope.haikuLine3 = '';
-			$scope.haikuTheme = '';
-		};
+		// Create New Haiku Modal
 		
-		$scope.addHaiku = function(){
-			haikus.create({
-				haikuLine1: $scope.haikuLine1,
-				haikuLine2: $scope.haikuLine2,
-				haikuLine3: $scope.haikuLine3,
-				haikuTheme: $scope.haikuTheme
+		$scope.animationsEnabled = true;
+
+  	$scope.open = function (size) {
+
+    	var modalInstance = $uibModal.open({
+				animation: $scope.animationsEnabled,
+				templateUrl: 'myModalContent.html',
+				controller: 'ModalInstanceCtrl',
+				size: size,
 			});
-		
-			$scope.clearFields();
-			$('#newHaikuModal').modal('hide');
 		};
 	}
 ]);
 
-app.controller('ModalCtrl', function($scope, $modal){
-	
-});
+
+app.controller('ModalInstanceCtrl', [
+	'$scope',
+	'$uibModalInstance',
+	'haikus',
+	function ($scope, $uibModalInstance, haikus) {
+
+  $scope.haikus = haikus.haikus;
+
+	$scope.addHaiku = function(){
+		haikus.create({
+			haikuLine1: $scope.haikuLine1,
+			haikuLine2: $scope.haikuLine2,
+			haikuLine3: $scope.haikuLine3,
+			haikuTheme: $scope.haikuTheme
+		});
+	};	
+		
+
+  $scope.ok = function () {
+    $uibModalInstance.close();
+  };
+
+  $scope.cancel = function () {
+    $uibModalInstance.dismiss('cancel');
+  };
+		
+}]);
+
 
 
 app.controller('manageHaikuCtrl', [
