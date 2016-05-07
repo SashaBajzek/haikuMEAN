@@ -21,7 +21,7 @@
 		<script src="/javascripts/angularApp.js"></script>
 	
 	</head>
-	<body ng-app="haikuForYou" ng-controller="MainCtrl">
+	<body ng-app="haikuForYou">
 
 		<ui-view class="{{haikusRandom[currentHaiku].haikuTheme}} themes"></ui-view>
 		
@@ -50,11 +50,11 @@
 				</div>
 				<div class="modal-body">
 
-					<input type="text" placeholder="Haiku Line 1:  5 Syllables" ng-model="haikuLine1" name="haikuLine1" required>
+					<input type="text" placeholder="Haiku Line 1:  5 Syllables" ng-model="haikuLine1" name="haikuLine1" minlength="5" required>
 					<br>
-					<input type="text" placeholder="Haiku Line 2:  7 Syllables" ng-model="haikuLine2" name="haikuLine2" required>
+					<input type="text" placeholder="Haiku Line 2:  7 Syllables" ng-model="haikuLine2" name="haikuLine2" minlength="7" required>
 					<br>
-					<input type="text" placeholder="Haiku Line 3:  5 Syllables" ng-model="haikuLine3" name="haikuLine3" required>
+					<input type="text" placeholder="Haiku Line 3:  5 Syllables" ng-model="haikuLine3" name="haikuLine3" minlength="5" required>
 					<br>
 					<div class="form-group">
 						<label for="haikuTheme">HAIKU BACKGROUND THEME:</label>
@@ -93,10 +93,10 @@
 
 		<script type="text/ng-template" id="/admin.html">
 			<div class="admin" ng-repeat="haiku in haikus"> 
-				<p>{{haiku.haikuLine1}}</p>
-				<p>{{haiku.haikuLine2}}</p>
+				<p>{{haiku.haikuLine1}},</p>
+				<p>{{haiku.haikuLine2}},</p>
 				<p>{{haiku.haikuLine3}}</p>
-				<button ng-click="deleteHaiku(haiku)">Delete this Haiku</button>
+				<button class="btn btn-danger" ng-click="deleteHaiku(haiku)">Delete this Haiku</button>
 			</div>
 		</script>
 		
