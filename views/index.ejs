@@ -92,11 +92,13 @@
     </script>
 
 		<script type="text/ng-template" id="/admin.html">
-			<div class="admin" ng-repeat="haiku in haikus"> 
-				<p>{{haiku.haikuLine1}},</p>
-				<p>{{haiku.haikuLine2}},</p>
-				<p>{{haiku.haikuLine3}}</p>
-				<button class="btn btn-danger" ng-click="deleteHaiku(haiku)">Delete this Haiku</button>
+			<div class="adminPage">
+				<div class="admin" ng-repeat="haiku in haikus"> 
+					<p>{{haiku.haikuLine1}},</p>
+					<p>{{haiku.haikuLine2}},</p>
+					<p>{{haiku.haikuLine3}}</p>
+					<button class="btn btn-danger" ng-click="deleteHaiku(haiku)">Delete this Haiku</button>
+				</div>
 			</div>
 		</script>
 		

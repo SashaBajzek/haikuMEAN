@@ -2,18 +2,13 @@
 	box-sizing: border-box;
 }
 
-html {
-	height: 100%;
-}
-
-body {
+html, body, ui-view {
 	height: 100%;
 }
 
 ui-view {
 	display: flex;
 	flex-direction: column;
-	height: 100%;
 }
 
 .brand {
@@ -516,10 +511,14 @@ footer {
 }
 
 /* admin page */
+.adminPage {
+	height: auto;
+}
 
 .admin {
 	border: 1px solid grey;
 	display: flex;
+	height: 38px;
 	justify-content: space-between;
 	margin: 4px auto;
 	padding: 5px;
