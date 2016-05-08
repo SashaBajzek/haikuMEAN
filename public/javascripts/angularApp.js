@@ -46,13 +46,10 @@ app.controller('MainCtrl', [
 			haikus.nextHaiku();
 		};
 		
-
 		// Create New Haiku Modal
-		
 		$scope.animationsEnabled = true;
 
   	$scope.open = function (size) {
-
     	var modalInstance = $uibModal.open({
 				animation: $scope.animationsEnabled,
 				templateUrl: 'myModalContent.html',
@@ -92,7 +89,6 @@ app.controller('ModalInstanceCtrl', [
 }]);
 
 
-
 app.controller('manageHaikuCtrl', [
 	'$scope',
 	'$stateParams',
@@ -101,13 +97,18 @@ app.controller('manageHaikuCtrl', [
 		$scope.haikus = haikus.haikus;
 		
 		$scope.deleteHaiku = function(haiku){
+			//Splicing haiku out of mongoDB
 			haikus.delete(haiku);
-		};		
-	}
-]);
-
-
-
+			//Splicing haiku out of the $scope.haikus array to not disturb any previous view changes
+			for(var i = 0; i < $scope.haikus.length; i++) {
+				if($scope.haikus[i]._id === haiku._id){
+					$scope.haikus.splice(i, 1);
+					break;
+				}
+			};	
+		};	
+		
+}]);
 
 
 app.factory('haikus', [
@@ -163,10 +164,7 @@ app.factory('haikus', [
 	
 	//delete single haiku
 	o.delete = function(haiku) {
-		return $http.delete('/haikus/'+haiku._id)
-			.success(function(data) {
-			angular.copy(data, o.haikus); //recommended to not refresh haiku list since this would erase anything you changed in views.  Instead, should return nothing & you should splice out the deleted haiku
-		});
+		$http.delete('/haikus/'+haiku._id);
 	};
 		
 	var shuffle = function (array) {
