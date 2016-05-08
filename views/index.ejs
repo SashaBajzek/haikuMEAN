@@ -23,7 +23,7 @@
 	</head>
 	<body ng-app="haikuForYou">
 
-		<ui-view class="{{haikusRandom[currentHaiku].haikuTheme}} themes"></ui-view>
+		<ui-view class="{{haikus[currentIndex()].haikuTheme}} themes"></ui-view>
 		
 		<script type="text/ng-template" id="/home.html">
 			<header>
@@ -32,12 +32,12 @@
 				<button class="submit" ng-click="open()">SUBMIT A HAIKU</button>	
 			</header>		
 			<main>
-					<h1 class="mainHaiku">{{haikusRandom[currentHaiku].haikuLine1}}</h1>
-					<h1 class="mainHaiku">{{haikusRandom[currentHaiku].haikuLine2}}</h1>
-					<h1 class="mainHaiku">{{haikusRandom[currentHaiku].haikuLine3}}</h1>
+					<h1 class="mainHaiku">{{haikus[currentIndex()].haikuLine1}}</h1>
+					<h1 class="mainHaiku">{{haikus[currentIndex()].haikuLine2}}</h1>
+					<h1 class="mainHaiku">{{haikus[currentIndex()].haikuLine3}}</h1>
 			</main>
 			<footer>
-				<button class="more" ng-click="nextHaiku()">MORE HAIKUS</button>
+				<button class="more" ng-click="incrementIndex()">MORE HAIKUS</button>
 			</footer>
 		</script>
 		

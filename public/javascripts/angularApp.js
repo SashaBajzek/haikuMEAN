@@ -11,7 +11,7 @@ app.config([
 				controller: 'MainCtrl',
 				resolve: {
 					postPromise: ['haikus', function(haikus){
-						return haikus.getAll();
+						return haikus.getAllRandomized();
 					}]
 				}
 			})
@@ -38,37 +38,15 @@ app.controller('MainCtrl', [
 		
 		$scope.haikus = haikus.haikus;
 		
-		var shuffle = function (array) {
-			var currentIndex = array.length, temporaryValue, randomIndex;
-			
-			//While there remain elements to shuffle
-			while (0 !== currentIndex) {
-				
-				//Pick a remaining element...
-				randomIndex = Math.floor(Math.random() * currentIndex);
-				currentIndex -=1;
-				
-				//And swap it with the current element
-				temporaryValue = array[currentIndex];
-				array[currentIndex] = array[randomIndex];
-				array[randomIndex] = temporaryValue;
-			}
-			
-			return array;
+		$scope.currentIndex = function() {
+			return haikus.currentHaiku;
 		};
 		
-		$scope.haikusRandom = shuffle($scope.haikus);
+		$scope.incrementIndex = function() {
+			haikus.nextHaiku();
+		};
+		
 
-		$scope.currentHaiku = 0;
-		
-		$scope.nextHaiku = function(){
-			$scope.currentHaiku +=1;
-			if($scope.currentHaiku >= $scope.haikusRandom.length)
-			{
-				$scope.currentHaiku = 0;
-			}	 
-		};
-		
 		// Create New Haiku Modal
 		
 		$scope.animationsEnabled = true;
@@ -101,8 +79,7 @@ app.controller('ModalInstanceCtrl', [
 			haikuLine3: $scope.haikuLine3,
 			haikuTheme: $scope.haikuTheme
 		});
-	};	
-		
+	};		
 
   $scope.ok = function () {
     $uibModalInstance.close();
@@ -124,12 +101,12 @@ app.controller('manageHaikuCtrl', [
 		$scope.haikus = haikus.haikus;
 		
 		$scope.deleteHaiku = function(haiku){
-			
-		haikus.delete(haiku);
-
+			haikus.delete(haiku);
 		};		
 	}
 ]);
+
+
 
 
 
@@ -139,33 +116,72 @@ app.factory('haikus', [
 	var o = {
 		haikus: []  //storing haikus in mongoDB 
 	};
-	
+		
+	o.currentHaiku = 0;
+		
+	o.nextHaiku = function() {
+		o.currentHaiku +=1;
+		if(o.currentHaiku >= o.haikus.length)
+		{
+			o.currentHaiku = 0;
+		}	 
+	};	
+		
 	//get all haikus
 	o.getAll = function() {
-		return $http.get('/haikus').success(function(data) {
-			angular.copy(data, o.haikus);
+		return $http.get('/haikus')
+			.success(function(data) {
+				angular.copy(data, o.haikus);
+		});
+	};
+		
+	//get all haikus randomized
+	o.getAllRandomized = function() {
+		return $http.get('/haikus')
+			.success(function(data) {
+				angular.copy(data, o.haikus);
+				o.haikus = shuffle(o.haikus);
 		});
 	};
 	
 	//get single haiku
 	o.get = function(id) {
-		return $http.get('/haikus/' + id).then(function(res){
-			return res.data;
+		return $http.get('/haikus/' + id)
+			.then(function(res){
+				return res.data;
 		});
 	};
 	
 	//create new haiku
 	o.create = function(haiku) {
-		return $http.post('/haikus', haiku).success(function(data){
-			o.haikus.push(data);
+		return $http.post('/haikus', haiku)
+			.success(function(data){
+				o.haikus.splice(o.currentHaiku + 1, 0, data);
+				o.currentHaiku++;
 		});
 	};
 	
 	//delete single haiku
 	o.delete = function(haiku) {
-		return $http.delete('/haikus/'+haiku._id).success(function(data) {
+		return $http.delete('/haikus/'+haiku._id)
+			.success(function(data) {
 			angular.copy(data, o.haikus); //recommended to not refresh haiku list since this would erase anything you changed in views.  Instead, should return nothing & you should splice out the deleted haiku
 		});
+	};
+		
+	var shuffle = function (array) {
+		var currentIndex = array.length, temporaryValue, randomIndex;
+		//While there remain elements to shuffle
+		while (0 !== currentIndex) {
+			//Pick a remaining element...
+			randomIndex = Math.floor(Math.random() * currentIndex);
+			currentIndex -=1;
+			//And swap it with the current element
+			temporaryValue = array[currentIndex];
+			array[currentIndex] = array[randomIndex];
+			array[randomIndex] = temporaryValue;
+		}
+		return array;
 	};
 	
 	return o;
