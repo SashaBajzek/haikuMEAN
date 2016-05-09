@@ -6,7 +6,14 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var mongoose = require('mongoose');
+var passport = require('passport');
+
+//Require the mongoose models to get the Schemas
 require('./models/Haikus');
+require('./models/Users');
+
+//Require passport configuration
+require('./config/passport');
 
 mongoose.connect('mongodb://localhost/haikus'); //this is the connection to MongoDB
 
@@ -28,6 +35,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(passport.initialize());
 
 app.use('/', routes);
 app.use('/users', users);
