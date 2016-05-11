@@ -92,7 +92,15 @@
     </script>
 
 		<script type="text/ng-template" id="/admin.html">
-			<div class="adminPage">
+			<nav class="navbar navbar-default pull-right" ng-controller="NavCtrl">
+				<ul class="nav navbar-nav">
+					<li ng-show="isLoggedIn()"><a>{{ currentUser() }}</a></li>
+					<li ng-show="isLoggedIn()"><a href="" ng-click="logOut()">Log Out</a></li>
+					<li ng-hide="isLoggedIn()"><a href="/#/login">Log In</a></li>
+					<li ng-hide="isLoggedIn()"><a href="/#/register">Register</a></li>
+				</ul>
+			</nav>
+			<div class="adminPage" ng-show="isLoggedIn()">
 				<div class="admin" ng-repeat="haiku in haikus"> 
 					<p>{{haiku.haikuLine1}},</p>
 					<p>{{haiku.haikuLine2}},</p>
@@ -100,7 +108,61 @@
 					<button class="btn btn-danger" ng-click="deleteHaiku(haiku)">Delete this Haiku</button>
 				</div>
 			</div>
+			<div ng-hide="isLoggedIn()">
+				<h3>You need to <a href="/#/login">Log In</a> before you can delete a post</h3>
+			</div>
 		</script>
+
+		
+		
+		<script type="text/ng-template" id="/register.html">
+			<div class="page-header">
+				<h1>Haiku For You Admin Register Page</h1>
+			</div>
+
+			<div ng-show="error" class="alert alert-danger row">
+				<span>{{ error.message }}</span>
+			</div>
+
+			<form ng-submit="register()">
+				<h3>Register</h3>
+
+				<div class="form-group">
+					<input type="text" class="form-control" placeholder="Username" ng-model="user.username">
+				</div>
+
+				<div class="form-group">
+					<input type="password" class="form-control" placeholder="Password" ng-model="user.password">
+				</div>
+
+				<button type="submit" class="btn btn-primary">Register</button>
+			</form>		
+		</script> 
+		
+		
+		<script type="text/ng-template" id="/login.html">
+			<div class="page-header">
+				<h1>Haiku For You Admin Login Page</h1>
+			</div>
+
+			<div ng-show="error" class="alert alert-danger row">
+				<span>{{ error.message }}</span>
+			</div>
+
+			<form ng-submit="logIn()">
+				<h3>Login</h3>
+
+				<div class="form-group">
+					<input type="text" class="form-control" placeholder="Username" ng-model="user.username">
+				</div>
+
+				<div class="form-group">
+					<input type="password" class="form-control" placeholder="Password" ng-model="user.password">
+				</div>
+				<button type="submit" class="btn btn-primary">Log In</button>
+			</form>			
+		</script>
+	
 		
 	</body>
 </html>
