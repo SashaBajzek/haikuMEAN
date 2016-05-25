@@ -38,7 +38,7 @@ ui-view {
 }
 
 main {
-	background-color: rgba(165, 165, 165, 0.8);
+	background-color: rgba(165, 165, 165, .8);
 	border-radius: 30px;
 	margin: auto;
 	transition: all 3s ease-in-out;
@@ -72,7 +72,7 @@ footer {
 	height: 25px;
 	letter-spacing: 4px;
 	padding: 2px 0 2px 4px;
-	transition: all 0.1s ease;
+	transition: all .1s ease;
 	width: 160px;
 }
 
@@ -80,7 +80,10 @@ footer {
 	outline: none;
 }
 
-
+main:hover, 
+.more:hover {
+	border: 1px solid;
+}
 
 
 
@@ -95,13 +98,12 @@ footer {
 
 .beachTheme main:hover, 
 .beachTheme .more:hover {
-	border: 1px solid;
-	border-color: rgba(128, 0, 128, 0.5);
+	border-color: rgba(128, 0, 128, .5);
 }
 
 .beachTheme main:hover,
 .beachTheme .more:active {
-	background-color: rgba(128, 0, 128, 0.5);
+	background-color: rgba(128, 0, 128, .5);
 }
 
 
@@ -116,13 +118,12 @@ footer {
 
 .careerTheme main:hover, 
 .careerTheme .more:hover {
-	border: 1px solid;
-	border-color: rgba(255, 0, 255, 0.5);
+	border-color: rgba(255, 0, 255, .5);
 }
 
 .careerTheme main:hover,
 .careerTheme .more:active {
-	background-color: rgba(255, 0, 255, 0.5);
+	background-color: rgba(255, 0, 255, .5);
 }
 
 
@@ -138,13 +139,12 @@ footer {
 
 .catTheme main:hover, 
 .catTheme .more:hover {
-	border: 1px solid;
-	border-color: rgba(64, 224, 208, 0.5);
+	border-color: rgba(64, 224, 208, .5);
 }
 
 .catTheme main:hover,
 .catTheme .more:active{
-	background-color: rgba(64, 224, 208, 0.5);
+	background-color: rgba(64, 224, 208, .5);
 }
 
 
@@ -160,13 +160,12 @@ footer {
 
 .cheersTheme main:hover,
 .cheersTheme .more:hover {
-	border: 1px solid;
-	border-color: rgba(139, 0, 139, 0.5);
+	border-color: rgba(139, 0, 139, .5);
 }
 
 .cheereTheme main:hover,
 .cheersTheme .more:active {
-	background-color: rgba(139, 0, 139, 0.5);
+	background-color: rgba(139, 0, 139, .5);
 }
 
 
@@ -181,13 +180,12 @@ footer {
 
 .childhoodTheme main:hover,
 .childhoodTheme .more:hover {
-	border: 1px solid;
-	border-color: rgba(255, 20, 147, 0.5);
+	border-color: rgba(255, 20, 147, .5);
 }
 
 .childhoodTheme main:hover,
 .childhoodTheme .more:active{
-	background-color: rgba(255, 20, 147, 0.5);
+	background-color: rgba(255, 20, 147, .5);
 }
 
 
@@ -202,13 +200,12 @@ footer {
 
 .coffeeTheme main:hover,
 .coffeeTheme .more:hover {
-	border: 1px solid;
-	border-color: rgba(255, 215, 0, 0.5);
+	border-color: rgba(255, 215, 0, .5);
 }
 
 .coffeeTheme main:hover,
 .coffeeTheme .more:active{
-	background-color: rgba(255, 215, 0, 0.5);
+	background-color: rgba(255, 215, 0, .5);
 }
 
 
@@ -223,13 +220,12 @@ footer {
 
 .dogTheme main:hover,
 .dogTheme .more:hover {
-	border: 1px solid;
-	border-color: rgba(186, 85, 211, 0.5);
+	border-color: rgba(186, 85, 211, .5);
 }
 
 .dogTheme main:hover,
 .dogTheme .more:active {
-	background-color: rgba(186, 85, 211, 0.5);
+	background-color: rgba(186, 85, 211, .5);
 }
 
 
@@ -244,13 +240,12 @@ footer {
 
 .fantasyTheme main:hover,
 .fantasyTheme .more:hover {
-	border: 1px solid;
-	border-color: rgba(255, 69, 0, 0.5);
+	border-color: rgba(255, 69, 0, .5);
 }
 
 .fantasyTheme main:hover,
 .fantasyTheme .more:active {
-	background-color: rgba(255, 69, 0, 0.5);
+	background-color: rgba(255, 69, 0, .5);
 }
 
 
@@ -265,13 +260,12 @@ footer {
 
 .fitnessTheme main:hover,
 .fitnessTheme .more:hover {
-	border: 1px solid;
-	border-color: rgba(255, 20, 147, 0.5);
+	border-color: rgba(255, 20, 147, .5);
 }
 
 .fitnessTheme main:hover,
 .fitnessTheme .more:active{
-	background-color: rgba(255, 20, 147, 0.5);
+	background-color: rgba(255, 20, 147, .5);
 }
 
 
@@ -286,13 +280,12 @@ footer {
 
 .foodTheme main:hover,
 .foodTheme .more:hover {
-	border: 1px solid;
-	border-color: rgba(25, 25, 112, 0.5);
+	border-color: rgba(25, 25, 112, .5);
 }
 
 .foodTheme main:hover,
 .foodTheme .more:active {
-	background-color: rgba(25, 25, 112, 0.5);
+	background-color: rgba(25, 25, 112, .5);
 }
 
 
@@ -307,13 +300,12 @@ footer {
 
 .happyTheme main:hover,
 .happyTheme .more:hover {
-	border: 1px solid;
-	border-color: rgba(255, 99, 71, 0.5);
+	border-color: rgba(255, 99, 71, .5);
 }
 
 .happyTheme main:hover,
 .happyTheme .more:active {
-	background-color: rgba(255, 99, 71, 0.5);
+	background-color: rgba(255, 99, 71, .5);
 }
 
 
@@ -328,13 +320,12 @@ footer {
 
 .musicTheme main:hover,
 .musicTheme .more:hover {
-	border: 1px solid;
-	border-color: rgba(65, 105, 225, 0.5);
+	border-color: rgba(65, 105, 225, .5);
 }
 
 .musicTheme main:hover,
 .musicTheme .more:active{
-	background-color: rgba(65, 105, 225, 0.5);
+	background-color: rgba(65, 105, 225, .5);
 }
 
 
@@ -349,13 +340,12 @@ footer {
 
 .natureTheme main:hover,
 .natureTheme .more:hover {
-	border: 1px solid;
-	border-color: rgba(220, 20, 60, 0.5);
+	border-color: rgba(220, 20, 60, .5);
 }
 
 .natureTheme main:hover,
 .natureTheme .more:active {
-	background-color: rgba(220, 20, 60, 0.5);
+	background-color: rgba(220, 20, 60, .5);
 }
 
 
@@ -370,13 +360,12 @@ footer {
 
 .painTheme main:hover,
 .painTheme .more:hover {
-	border: 1px solid;
-	border-color: rgba(178, 34, 34, 0.5);
+	border-color: rgba(178, 34, 34, .5);
 }
 
 .painTheme main:hover,
 .painTheme .more:active {
-	background-color: rgba(220, 20, 60, 0.5);
+	background-color: rgba(220, 20, 60, .5);
 }
 
 
@@ -391,13 +380,12 @@ footer {
 
 .romanceTheme main:hover,
 .romanceTheme .more:hover {
-	border: 1px solid;
-	border-color: rgba(0, 128, 128, 0.5);
+	border-color: rgba(0, 128, 128, .5);
 }
 
 .romanceTheme main:hover,
 .romanceTheme .more:active {
-	background-color: rgba(0, 128, 128, 0.5);
+	background-color: rgba(0, 128, 128, .5);
 }
 
 
@@ -412,13 +400,12 @@ footer {
 
 .somberTheme main:hover,
 .somberTheme more:hover {
-	border: 1px solid;
-	border-color: rgba(240, 128, 128, 0.5);
+	border-color: rgba(240, 128, 128, .5);
 }
 
 .somberTheme main:hover,
 .somberTheme .more:active {
-	background-color: rgba(240, 128, 128, 0.5);
+	background-color: rgba(240, 128, 128, .5);
 }
 
 
@@ -433,13 +420,12 @@ footer {
 
 .stormTheme main:hover,
 .stormTheme .more:hover {
-	border: 1px solid;
-	border-color: rgba(255, 69, 0, 0.5);
+	border-color: rgba(255, 69, 0, .5);
 }
 
 .stormTheme main:hover,
 .stormTheme .more:active{
-	background-color: rgba(255, 69, 0, 0.5);
+	background-color: rgba(255, 69, 0, .5);
 }
 
 
@@ -454,13 +440,12 @@ footer {
 
 .technologyTheme main:hover,
 .technologyTheme .more:hover {
-	border: 1px solid;
-	border-color: rgba(0, 255, 127, 0.5);
+	border-color: rgba(0, 255, 127, .5);
 }
 
 .technologyTheme main:hover,
 .technologyTheme .more:active {
-	background-color: rgba(0, 255, 127, 0.5);
+	background-color: rgba(0, 255, 127, .5);
 }
 
 
@@ -475,13 +460,12 @@ footer {
 
 .travelTheme main:hover,
 .travelTheme .more:hover {
-	border: 1px solid;
-	border-color: rgba(220, 20, 60, 0.5);
+	border-color: rgba(220, 20, 60, .5);
 }
 
 .travelTheme main:hover,
 .travelTheme .more:active {
-	background-color: rgba(220, 20, 60, 0.5);
+	background-color: rgba(220, 20, 60, .5);
 }
 
 
@@ -496,13 +480,12 @@ footer {
 
 .whimsyTheme main:hover
 .whimsyTheme more:hover {
-	border: 1px solid;
-	border-color: rgba(255, 99, 71, 0.5);
+	border-color: rgba(255, 99, 71, .5);
 }
 
 .whimsyTheme main:hover,
 .whimsyTheme .more:active{
-	background-color: rgba(255, 99, 71, 0.5);
+	background-color: rgba(255, 99, 71, .5);
 }
 
 .themes {
@@ -719,4 +702,3 @@ footer {
 	}
 	
 }
-

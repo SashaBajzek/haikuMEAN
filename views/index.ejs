@@ -98,6 +98,7 @@
 					<li ng-show="isLoggedIn()"><a href="" ng-click="logOut()">Log Out</a></li>
 					<li ng-hide="isLoggedIn()"><a href="/#/login">Log In</a></li>
 					<li ng-hide="isLoggedIn()"><a href="/#/register">Register</a></li>
+					<li><a href="/#/home">Home Page</a></li>
 				</ul>
 			</nav>
 			<div class="adminPage" ng-show="isLoggedIn()">
@@ -109,13 +110,23 @@
 				</div>
 			</div>
 			<div ng-hide="isLoggedIn()">
-				<h3>You need to <a href="/#/login">Log In</a> before you can delete a post</h3>
+				<h3>You need to <a href="/#/login">Log In</a> before you can delete a haiku</h3>
 			</div>
 		</script>
 
 		
 		
 		<script type="text/ng-template" id="/register.html">
+			<nav class="navbar navbar-default pull-right" ng-controller="NavCtrl">
+				<ul class="nav navbar-nav">
+					<li ng-show="isLoggedIn()"><a>{{ currentUser() }}</a></li>
+					<li ng-show="isLoggedIn()"><a href="" ng-click="logOut()">Log Out</a></li>
+					<li ng-hide="isLoggedIn()"><a href="/#/login">Log In</a></li>
+					<li ng-hide="isLoggedIn()"><a href="/#/register">Register</a></li>
+					<li><a href="/#/home">Home Page</a></li>
+				</ul>
+			</nav>
+			
 			<div class="page-header">
 				<h1>Haiku For You Admin Register Page</h1>
 			</div>
@@ -141,6 +152,16 @@
 		
 		
 		<script type="text/ng-template" id="/login.html">
+			<nav class="navbar navbar-default pull-right" ng-controller="NavCtrl">
+				<ul class="nav navbar-nav">
+					<li ng-show="isLoggedIn()"><a>{{ currentUser() }}</a></li>
+					<li ng-show="isLoggedIn()"><a href="" ng-click="logOut()">Log Out</a></li>
+					<li ng-hide="isLoggedIn()"><a href="/#/login">Log In</a></li>
+					<li ng-hide="isLoggedIn()"><a href="/#/register">Register</a></li>
+					<li><a href="/#/home">Home Page</a></li>
+				</ul>
+			</nav>
+			
 			<div class="page-header">
 				<h1>Haiku For You Admin Login Page</h1>
 			</div>

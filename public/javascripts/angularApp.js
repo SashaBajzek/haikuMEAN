@@ -87,8 +87,6 @@ app.controller('ModalInstanceCtrl', [
 	'haikus',
 	function ($scope, $uibModalInstance, haikus) {
 
-  $scope.haikus = haikus.haikus;
-
 	$scope.addHaiku = function(){
 		haikus.create({
 			haikuLine1: $scope.haikuLine1,
@@ -140,19 +138,23 @@ app.controller('AuthCtrl', [
 		$scope.user = {};
 		
 		$scope.register = function() {
-			auth.register($scope.user).error(function(error){
-				$scope.error = error;	
-			}).then(function(){
-				$state.go('home');
-			});
+			auth.register($scope.user)
+				.then(function(){
+					$state.go('admin');
+				})
+				.error(function(error){
+					$scope.error = error;	
+				});
 		};
 		
 		$scope.logIn = function() {
-			auth.logIn($scope.user).error(function(error){
-				$scope.error = error;
-			}).then(function(){
+			auth.logIn($scope.user)
+				.then(function(){
 				$state.go('admin');
-			});
+				})
+				.error(function(error){
+					$scope.error = error;
+				});
 		};
 }]);
 

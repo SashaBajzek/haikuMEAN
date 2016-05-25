@@ -5,7 +5,7 @@ var dotenv = require('dotenv');
 dotenv.load();
 
 var UserSchema = new mongoose.Schema({
-	username: {type: String, lowercase: true, unique: true},
+	username: {type: String, unique: true},
 	hash: String,
 	salt: String
 });
@@ -18,8 +18,6 @@ UserSchema.methods.setPassword = function(password){
 
 UserSchema.methods.validPassword = function(password) {
 	var hash = crypto.pbkdf2Sync(password, this.salt, 1000, 64).toString('hex');
-	console.log(password);
-	console.log(hash);
 	return this.hash === hash;
 };
 
@@ -34,13 +32,7 @@ UserSchema.methods.generateJWT = function() {
 		_id: this._id,
 		username: this.username,
 		exp: parseInt(exp.getTime() / 1000),
-		}, process.env.SECRET); 
-	//Instead of hardcoding the SECRET, need to figure out how to use an environment variable for referencing the secret and keep it out of the codebase.
+		}, process.env.SECRET); //using .ENV
 };
-
-
-
-
-
 
 mongoose.model('User', UserSchema);

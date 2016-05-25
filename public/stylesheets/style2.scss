@@ -1,0 +1,814 @@
+$color--beachTheme: purple;
+$color__transparent--beachTheme: rgba(128, 0, 128, .5);
+
+$color--careerTheme: fuchsia;
+$color__transparent--careerTheme: rgba(255, 0, 255, .5);
+
+$color--catTheme: turquoise;
+$color__transparent--catTheme: rgba(128, 0, 128, .5);
+
+$color--cheersTheme: darkmagenta;
+$color__transparent--cheersTheme: rgba(139, 0, 139, .5);
+
+$color--childhoodTheme: deeppink;
+$color__transparent--childhoodTheme: rgba(255, 20, 147, .5);
+
+$color--coffeeTheme: gold;
+$color__transparent--coffeeTheme: rgba(255, 215, 0, .5);
+
+$color--dogTheme: mediumorchid;
+$color__transparent--dogTheme: rgba(186, 85, 211, .5);
+
+$color--fantasyTheme: orangered;
+$color__transparent--fantasyTheme: rgba(255, 69, 0, .5);
+
+$color--fitnessTheme: deeppink;
+$color__transparent--fitnessTheme: rgba(255, 20, 147, .5);
+
+$color--foodTheme: midnightblue;
+$color__transparent--foodTheme: rgba(25, 25, 112, .5);
+
+$color--happyTheme: tomato;
+$color__transparent--happyTheme: rgba(255, 99, 71, .5);
+
+$color--musicTheme: royalblue;
+$color__transparent--musicTheme: rgba(65, 105, 225, .5);
+
+$color--natureTheme: crimson;
+$color__transparent--natureTheme: rgba(220, 20, 60, .5);
+
+$color--painTheme: firebrick;
+$color__transparent--painTheme: rgba(178, 34, 34, .5);
+
+$color--romanceTheme: teal;
+$color__transparent--romanceTheme: rgba(0, 128, 128, .5);
+
+$color--somberTheme: lightcoral;
+$color__transparent--somberTheme: rgba(240, 128, 128, .5);
+
+$color--stormTheme: orangered;
+$color__transparent--stormTheme: rgba(255, 69, 0, .5);
+
+$color--technologyTheme: springgreen;
+$color__transparent--technologyTheme: rgba(0, 255, 127, .5);
+
+$color--travelTheme: crimson;
+$color__transparent--travelTheme: rgba(220, 20, 60, .5);
+
+$color--whimsyTheme: tomato;
+$color__transparent--whimsyTheme: rgba(255, 99, 71, .5);
+
+
+
+
+
+
+
+
+
+
+
+
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	height: 100%;
+}
+
+ui-view {
+	@extend html;
+	display: flex;
+	flex-direction: column;
+}
+
+.brand, .more {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 800;
+	margin: 0 auto;
+}
+
+.brand {
+	color: #A5A5A5;
+	font-size: 30px;
+	height: 37px;
+	letter-spacing: 10px;
+	padding: 0 0 0 10px;
+	text-align: center;
+	transition: all 1s ease-in-out;
+	width: 390px;
+}
+
+.brand:hover {
+	transform: scale(1.02);
+	transform-origin: center center;
+}
+
+.submit {
+	color: #000000;
+	display: block;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	height: 37px;
+	margin: 25px auto 0 auto;
+	width: 122px;
+}
+
+main {
+	background-color: rgba(165, 165, 165, .8);
+	border-radius: 30px;
+	margin: auto;
+	transition: all 3s ease-in-out;
+}
+
+.mainHaiku {
+	color: #000000;
+	font-family: 'Merriweather', serif;
+	font-size: 30px;
+	font-weight: 300;
+	margin: auto;
+	padding: 10px;
+	text-align: center;
+}
+
+footer {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.more {
+	border: none;
+	color: #000000;
+	height: 25px;
+	letter-spacing: 4px;
+	padding: 2px 0 2px 4px;
+	transition: all .1s ease;
+	width: 160px;
+}
+
+.more:focus {
+	outline: none;
+}
+
+.more:hover,
+main:hover {
+	border: 1px solid;
+}
+
+
+
+.beachTheme {
+	background: skyblue;
+	background-image: url("/images/beach_sm.jpg");	
+
+	.brand:hover {
+		color: $color--beachTheme;
+	}
+	
+	main:hover {
+		background-color: $color__transparent--beachTheme;
+		border-color: $color__transparent--beachTheme;
+	}
+	
+	.more:active {
+		background-color: $color__transparent--beachTheme;
+	}
+	
+	.more:hover {
+		border-color: $color__transparent--beachTheme;
+	}
+}
+
+.careerTheme {
+	background: blue;
+	background-image: url("/images/career_sm.jpg");	
+
+	.brand:hover {
+		color: $color--careerTheme;
+	}
+	
+	main:hover {
+		background-color: $color__transparent--careerTheme;
+		border-color: $color__transparent--careerTheme;
+	}
+	
+	.more:active {
+		background-color: $color__transparent--careerTheme;
+	}
+	
+	.more:hover {
+		border-color: $color__transparent--careerTheme;
+	}
+}
+
+.catTheme {
+	background: blue;
+	background-image: url("/images/cat_sm.jpg");
+
+	.brand:hover {
+		color: $color--catTheme;
+	}
+	
+	main:hover {
+		background-color: $color__transparent--catTheme;
+		border-color: $color__transparent--catTheme;
+	}
+	
+	.more:active {
+		background-color: $color__transparent--catTheme;
+	}
+	
+	.more:hover {
+		border-color: $color__transparent--catTheme;
+	}
+}
+
+.cheersTheme {
+	background: blue;
+	background-image: url("/images/cheers_sm.jpg");
+
+	.brand:hover {
+		color: $color--cheersTheme;
+	}
+	
+	main:hover {
+		background-color: $color__transparent--cheersTheme;
+		border-color: $color__transparent--cheersTheme;
+	}
+	
+	.more:active {
+		background-color: $color__transparent--cheersTheme;
+	}
+	
+	.more:hover {
+		border-color: $color__transparent--cheersTheme;
+	}
+}
+
+.childhoodTheme {
+	background: blue;
+	background-image: url("/images/childhood_sm.jpg");	
+
+	.brand:hover {
+		color: $color--childhoodTheme;
+	}
+	
+	main:hover {
+		background-color: $color__transparent--childhoodTheme;
+		border-color: $color__transparent--childhoodTheme;
+	}
+	
+	.more:active {
+		background-color: $color__transparent--childhoodTheme;
+	}
+	
+	.more:hover {
+		border-color: $color__transparent--childhoodTheme;
+	}
+}
+
+.coffeeTheme {
+	background: blue;
+	background-image: url("/images/coffee_sm.jpg");
+
+	.brand:hover {
+		color: $color--coffeeTheme;
+	}
+	
+	main:hover {
+		background-color: $color__transparent--coffeeTheme;
+		border-color: $color__transparent--coffeeTheme;
+	}
+	
+	.more:active {
+		background-color: $color__transparent--coffeeTheme;
+	}
+	
+	.more:hover {
+		border-color: $color__transparent--coffeeTheme;
+	}
+}
+
+.dogTheme {
+	background: blue;
+	background-image: url("/images/dog_sm.jpg");
+
+	.brand:hover {
+		color: $color--dogTheme;
+	}
+	
+	main:hover {
+		background-color: $color__transparent--dogTheme;
+		border-color: $color__transparent--dogTheme;
+	}
+	
+	.more:active {
+		background-color: $color__transparent--dogTheme;
+	}
+	
+	.more:hover {
+		border-color: $color__transparent--dogTheme;
+	}
+}
+
+.fantasyTheme {
+	background: blue;
+	background-image: url("/images/fantasy_sm.jpg");
+
+	.brand:hover {
+		color: $color--fantasyTheme;
+	}
+	
+	main:hover {
+		background-color: $color__transparent--fantasyTheme;
+		border-color: $color__transparent--fantasyTheme;
+	}
+	
+	.more:active {
+		background-color: $color__transparent--fantasyTheme;
+	}
+	
+	.more:hover {
+		border-color: $color__transparent--fantasyTheme;
+	}
+}
+
+.fitnessTheme {
+	background: blue;
+	background-image: url("/images/fitness_sm.jpg");
+
+	.brand:hover {
+		color: $color--fitnessTheme;
+	}
+	
+	main:hover {
+		background-color: $color__transparent--fitnessTheme;
+		border-color: $color__transparent--fitnessTheme;
+	}
+	
+	.more:active {
+		background-color: $color__transparent--fitnessTheme;
+	}
+	
+	.more:hover {
+		border-color: $color__transparent--fitnessTheme;
+	}
+}
+
+.foodTheme {
+	background: blue;
+	background-image: url("/images/food_sm.jpg");
+
+	.brand:hover {
+		color: $color--foodTheme;
+	}
+	
+	main:hover {
+		background-color: $color__transparent--foodTheme;
+		border-color: $color__transparent--foodTheme;
+	}
+	
+	.more:active {
+		background-color: $color__transparent--foodTheme;
+	}
+	
+	.more:hover {
+		border-color: $color__transparent--foodTheme;
+	}
+}
+
+.happyTheme {
+	background: yellow;
+	background-image: url("/images/happy_sm.jpg");
+
+	.brand:hover {
+		color: $color--happyTheme;
+	}
+	
+	main:hover {
+		background-color: $color__transparent--happyTheme;
+		border-color: $color__transparent--happyTheme;
+	}
+	
+	.more:active {
+		background-color: $color__transparent--happyTheme;
+	}
+	
+	.more:hover {
+		border-color: $color__transparent--happyTheme;
+	}
+}
+
+.musicTheme {
+	background: yellow;
+	background-image: url("/images/music_sm.jpg");
+
+	.brand:hover {
+		color: $color--musicTheme;
+	}
+	
+	main:hover {
+		background-color: $color__transparent--musicTheme;
+		border-color: $color__transparent--musicTheme;
+	}
+	
+	.more:active {
+		background-color: $color__transparent--musicTheme;
+	}
+	
+	.more:hover {
+		border-color: $color__transparent--musicTheme;
+	}
+}
+
+.natureTheme {
+	background: yellow;
+	background-image: url("/images/nature_sm.jpg");
+
+	.brand:hover {
+		color: $color--natureTheme;
+	}
+	
+	main:hover {
+		background-color: $color__transparent--natureTheme;
+		border-color: $color__transparent--natureTheme;
+	}
+	
+	.more:active {
+		background-color: $color__transparent--natureTheme;
+	}
+	
+	.more:hover {
+		border-color: $color__transparent--natureTheme;
+	}
+}
+
+.painTheme {
+	background: yellow;
+	background-image: url("/images/pain_sm.jpg");
+
+	.brand:hover {
+		color: $color--painTheme;
+	}
+	
+	main:hover {
+		background-color: $color__transparent--painTheme;
+		border-color: $color__transparent--painTheme;
+	}
+	
+	.more:active {
+		background-color: $color__transparent--painTheme;
+	}
+	
+	.more:hover {
+		border-color: $color__transparent--painTheme;
+	}
+}
+
+.romanceTheme {
+	background: crimson;
+	background-image: url("/images/romance_sm.jpg");
+
+	.brand:hover {
+		color: $color--romanceTheme;
+	}
+	
+	main:hover {
+		background-color: $color__transparent--romanceTheme;
+		border-color: $color__transparent--romanceTheme;
+	}
+	
+	.more:active {
+		background-color: $color__transparent--romanceTheme;
+	}
+	
+	.more:hover {
+		border-color: $color__transparent--romanceTheme;
+	}
+}
+
+.somberTheme {
+	background: grey;
+	background-image: url("/images/somber_sm.jpg");
+
+	.brand:hover {
+		color: $color--somberTheme;
+	}
+	
+	main:hover {
+		background-color: $color__transparent--somberTheme;
+		border-color: $color__transparent--somberTheme;
+	}
+	
+	.more:active {
+		background-color: $color__transparent--somberTheme;
+	}
+	
+	.more:hover {
+		border-color: $color__transparent--somberTheme;
+	}
+}
+
+.stormTheme {
+	background: grey;
+	background-image: url("/images/storm_sm.jpg");
+
+	.brand:hover {
+		color: $color--stormTheme;
+	}
+	
+	main:hover {
+		background-color: $color__transparent--stormTheme;
+		border-color: $color__transparent--stormTheme;
+	}
+	
+	.more:active {
+		background-color: $color__transparent--stormTheme;
+	}
+	
+	.more:hover {
+		border-color: $color__transparent--stormTheme;
+	}
+}
+
+.technologyTheme {
+	background: grey;
+	background-image: url("/images/technology_sm.jpg");
+
+	.brand:hover {
+		color: $color--technologyTheme;
+	}
+	
+	main:hover {
+		background-color: $color__transparent--technologyTheme;
+		border-color: $color__transparent--technologyTheme;
+	}
+	
+	.more:active {
+		background-color: $color__transparent--technologyTheme;
+	}
+	
+	.more:hover {
+		border-color: $color__transparent--technologyTheme;
+	}
+}
+
+.travelTheme {
+	background: grey;
+	background-image: url("/images/travel_sm.jpg");
+
+	.brand:hover {
+		color: $color--travelTheme;
+	}
+	
+	main:hover {
+		background-color: $color__transparent--travelTheme;
+		border-color: $color__transparent--travelTheme;
+	}
+	
+	.more:active {
+		background-color: $color__transparent--travelTheme;
+	}
+	
+	.more:hover {
+		border-color: $color__transparent--travelTheme;
+	}
+}
+
+.whimsyTheme {
+	background: purple;
+	background-image: url("/images/whimsy_sm.jpg");
+
+	.brand:hover {
+		color: $color--whimsyTheme;
+	}
+	
+	main:hover {
+		background-color: $color__transparent--whimsyTheme;
+		border-color: $color__transparent--whimsyTheme;
+	}
+	
+	.more:active {
+		background-color: $color__transparent--whimsyTheme;
+	}
+	
+	.more:hover {
+		border-color: $color__transparent--whimsyTheme;
+	}
+}
+
+
+/* admin page */
+.adminPage {
+	height: auto;
+}
+
+.admin {
+	border: 1px solid grey;
+	display: flex;
+	height: 38px;
+	justify-content: space-between;
+	margin: 4px auto;
+	padding: 5px;
+	width: 85%;
+}
+
+.admin p {
+	margin: auto 0;
+}
+
+.admin button {
+	color: black;
+	padding: 2px 6px;
+}
+
+/* Modal Classes */
+
+.close {
+	transition: all 4s ease-out;
+}
+
+.close:hover {
+	color: crimson;
+	transform: rotate(360deg) scale(1.5);
+}
+
+.modal-title {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 800;
+}
+
+.modal-body input {
+	border: 1px solid rgb(204, 204, 204);
+	border-radius: 3px;
+	display: flex;
+	justify-content: center;
+	margin: 5px auto;
+	text-align: center;
+	width: 90%;
+}
+
+.modal-footer button {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+}
+
+.form-group label {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 800;
+}
+
+.ng-valid.ng-touched {
+	outline-color: green;
+}
+
+.ng-invalid.ng-touched {
+	outline-color: red;
+}
+
+
+@media only screen and (min-width: 640px) {
+	
+	header {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		margin: 0;
+	}
+	
+	.brand {
+		margin: 0;
+		padding: 2px 0 2px 15px;
+		transition: all 1s ease-in-out;
+	}
+	
+	.brand:hover {
+		transform: scale(1.1);
+		transform-origin: center left;
+	}
+	
+	.submit {
+		display: inline-block;
+		margin: 0;
+}
+
+	.mainHaiku {
+		padding: 25px;
+	}
+	
+	.more {
+		margin: 0;
+	}
+	
+	footer {
+		justify-content: flex-start;
+	}
+	
+	
+	
+	.beachTheme {
+		background-image: url("/images/beach.jpg");
+	}
+
+	.careerTheme {
+		background-image: url("/images/career.jpg");
+	}
+
+	.catTheme {
+		background-image: url("/images/cat.jpg");
+	}
+
+	.cheersTheme {
+		background-image: url("/images/cheers.jpg");
+	}
+
+	.childhoodTheme {
+		background-image: url("/images/childhood.jpg");
+	}
+
+	.coffeeTheme {
+		background-image: url("/images/coffee.jpg");
+	}
+
+	.dogTheme {
+		background-image: url("/images/dog.jpg");
+	}
+
+	.fantasyTheme {
+		background-image: url("/images/fantasy.jpg");
+	}
+
+	.fitnessTheme {
+		background-image: url("/images/fitness.jpg");
+	}
+
+	.foodTheme {
+		background-image: url("/images/food.jpg");
+	}
+
+	.happyTheme {
+		background-image: url("/images/happy.jpg");
+	}
+
+	.musicTheme {
+		background-image: url("/images/music.jpg");
+	}
+
+	.natureTheme {
+		background-image: url("/images/nature.jpg");
+	}
+
+	.painTheme {
+		background-image: url("/images/pain.jpg");
+	}
+
+	.romanceTheme {
+		background-image: url("/images/romance.jpg");
+	}
+
+	.somberTheme {
+		background-image: url("/images/somber.jpg");
+	}
+
+	.stormTheme {
+		background-image: url("/images/storm.jpg");
+	}
+
+	.technologyTheme {
+		background-image: url("/images/technology.jpg");
+	}
+
+	.travelTheme {
+		background-image: url("/images/travel.jpg");
+	}
+
+	.whimsyTheme {
+		background-image: url("/images/whimsy.jpg");
+	}
+
+
+	
+}
+
+@media only screen and (min-width: 450px) {
+	
+	.brand {
+		letter-spacing: 15px;
+		padding: 0;
+		width: 450px;
+	}
+	
+	.mainHaiku {
+		font-size: 36px;
+	}
+	
+	.modal-body input {
+		width: 75%;
+	}
+	
+}
+
+	
+

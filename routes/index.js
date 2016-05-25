@@ -8,7 +8,7 @@ var jwt = require('express-jwt');
 var dotenv = require('dotenv');
 dotenv.load();
 
-var auth = jwt({secret: process.env.SECRET, userProperty: 'payload'});
+var auth = jwt({secret: process.env.SECRET, userProperty: 'payload'}); //using .ENV
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -98,6 +98,7 @@ router.post('/login', function(req, res, next) {
 	}
 	
 	passport.authenticate('local', function(err, user, info){
+		
 		if(err) {
 			return next(err);
 		}
