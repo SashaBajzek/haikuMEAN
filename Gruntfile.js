@@ -12,14 +12,21 @@ module.exports = function(grunt) {
 			},
       dist: {
 //				 options: {
-//					 sourcemap: true,
-//					 sourcecomments: false
+//					 sourcemap: none;
 //				 },
         files: {
           'public/stylesheets/css/styleconverted.css': 'public/stylesheets/style2.scss'
         }
       }
     },
+		
+		scsslint: {
+			dist: {
+				dist: {
+					src: ['public/stylesheets/style2.scss']
+				}
+			}
+		},
 
     // Watch and build
     watch: {
@@ -38,6 +45,6 @@ module.exports = function(grunt) {
 
   // Run tasks
   grunt.registerTask('default', ['sass']);
-
+//	grunt.registerTask('default', ['scsslint']);
 
 };

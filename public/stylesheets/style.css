@@ -2,7 +2,9 @@
 	box-sizing: border-box;
 }
 
-html, body, ui-view {
+body, 
+html, 
+ui-view {
 	height: 100%;
 }
 
@@ -33,7 +35,7 @@ ui-view {
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 300;
 	height: 37px;
-	margin: 25px auto 0 auto;
+	margin: 25px auto 0;
 	width: 122px;
 }
 
@@ -163,7 +165,7 @@ main:hover,
 	border-color: rgba(139, 0, 139, .5);
 }
 
-.cheereTheme main:hover,
+.cheersTheme main:hover,
 .cheersTheme .more:active {
 	background-color: rgba(139, 0, 139, .5);
 }

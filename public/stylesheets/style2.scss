@@ -83,7 +83,8 @@ ui-view {
 	flex-direction: column;
 }
 
-.brand, .more {
+.brand, 
+.more {
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 800;
 	margin: 0 auto;
@@ -111,7 +112,7 @@ ui-view {
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 300;
 	height: 37px;
-	margin: 25px auto 0 auto;
+	margin: 25px auto 0;
 	width: 122px;
 }
 
@@ -167,15 +168,12 @@ main:hover {
 		color: $color--beachTheme;
 	}
 	
-	main:hover {
-		background-color: $color__transparent--beachTheme;
-		border-color: $color__transparent--beachTheme;
-	}
-	
+	main:hover,
 	.more:active {
 		background-color: $color__transparent--beachTheme;
 	}
 	
+	main:hover,
 	.more:hover {
 		border-color: $color__transparent--beachTheme;
 	}
@@ -189,15 +187,12 @@ main:hover {
 		color: $color--careerTheme;
 	}
 	
-	main:hover {
-		background-color: $color__transparent--careerTheme;
-		border-color: $color__transparent--careerTheme;
-	}
-	
+	main:hover,
 	.more:active {
 		background-color: $color__transparent--careerTheme;
 	}
 	
+	main:hover,
 	.more:hover {
 		border-color: $color__transparent--careerTheme;
 	}
@@ -211,15 +206,12 @@ main:hover {
 		color: $color--catTheme;
 	}
 	
-	main:hover {
-		background-color: $color__transparent--catTheme;
-		border-color: $color__transparent--catTheme;
-	}
-	
+	main:hover,
 	.more:active {
 		background-color: $color__transparent--catTheme;
 	}
 	
+	main:hover,
 	.more:hover {
 		border-color: $color__transparent--catTheme;
 	}
@@ -233,15 +225,12 @@ main:hover {
 		color: $color--cheersTheme;
 	}
 	
-	main:hover {
-		background-color: $color__transparent--cheersTheme;
-		border-color: $color__transparent--cheersTheme;
-	}
-	
+	main:hover,
 	.more:active {
 		background-color: $color__transparent--cheersTheme;
 	}
 	
+	main:hover,
 	.more:hover {
 		border-color: $color__transparent--cheersTheme;
 	}
@@ -255,15 +244,12 @@ main:hover {
 		color: $color--childhoodTheme;
 	}
 	
-	main:hover {
-		background-color: $color__transparent--childhoodTheme;
-		border-color: $color__transparent--childhoodTheme;
-	}
-	
+	main:hover,
 	.more:active {
 		background-color: $color__transparent--childhoodTheme;
 	}
 	
+	main:hover,
 	.more:hover {
 		border-color: $color__transparent--childhoodTheme;
 	}
@@ -277,15 +263,12 @@ main:hover {
 		color: $color--coffeeTheme;
 	}
 	
-	main:hover {
-		background-color: $color__transparent--coffeeTheme;
-		border-color: $color__transparent--coffeeTheme;
-	}
-	
+	main:hover,
 	.more:active {
 		background-color: $color__transparent--coffeeTheme;
 	}
 	
+	main:hover,
 	.more:hover {
 		border-color: $color__transparent--coffeeTheme;
 	}
@@ -299,15 +282,12 @@ main:hover {
 		color: $color--dogTheme;
 	}
 	
-	main:hover {
-		background-color: $color__transparent--dogTheme;
-		border-color: $color__transparent--dogTheme;
-	}
-	
+	main:hover,
 	.more:active {
 		background-color: $color__transparent--dogTheme;
 	}
 	
+	main:hover,
 	.more:hover {
 		border-color: $color__transparent--dogTheme;
 	}
@@ -321,15 +301,12 @@ main:hover {
 		color: $color--fantasyTheme;
 	}
 	
-	main:hover {
-		background-color: $color__transparent--fantasyTheme;
-		border-color: $color__transparent--fantasyTheme;
-	}
-	
+	main:hover,
 	.more:active {
 		background-color: $color__transparent--fantasyTheme;
 	}
 	
+	main:hover,
 	.more:hover {
 		border-color: $color__transparent--fantasyTheme;
 	}
@@ -343,15 +320,12 @@ main:hover {
 		color: $color--fitnessTheme;
 	}
 	
-	main:hover {
-		background-color: $color__transparent--fitnessTheme;
-		border-color: $color__transparent--fitnessTheme;
-	}
-	
+	main:hover,
 	.more:active {
 		background-color: $color__transparent--fitnessTheme;
 	}
 	
+	main:hover,
 	.more:hover {
 		border-color: $color__transparent--fitnessTheme;
 	}
@@ -365,15 +339,12 @@ main:hover {
 		color: $color--foodTheme;
 	}
 	
-	main:hover {
-		background-color: $color__transparent--foodTheme;
-		border-color: $color__transparent--foodTheme;
-	}
-	
+	main:hover,
 	.more:active {
 		background-color: $color__transparent--foodTheme;
 	}
 	
+	main:hover,
 	.more:hover {
 		border-color: $color__transparent--foodTheme;
 	}
@@ -387,15 +358,12 @@ main:hover {
 		color: $color--happyTheme;
 	}
 	
-	main:hover {
-		background-color: $color__transparent--happyTheme;
-		border-color: $color__transparent--happyTheme;
-	}
-	
+	main:hover,
 	.more:active {
 		background-color: $color__transparent--happyTheme;
 	}
 	
+	main:hover,
 	.more:hover {
 		border-color: $color__transparent--happyTheme;
 	}
@@ -409,15 +377,12 @@ main:hover {
 		color: $color--musicTheme;
 	}
 	
-	main:hover {
-		background-color: $color__transparent--musicTheme;
-		border-color: $color__transparent--musicTheme;
-	}
-	
+	main:hover,
 	.more:active {
 		background-color: $color__transparent--musicTheme;
 	}
 	
+	main:hover,
 	.more:hover {
 		border-color: $color__transparent--musicTheme;
 	}
@@ -431,15 +396,12 @@ main:hover {
 		color: $color--natureTheme;
 	}
 	
-	main:hover {
-		background-color: $color__transparent--natureTheme;
-		border-color: $color__transparent--natureTheme;
-	}
-	
+	main:hover,
 	.more:active {
 		background-color: $color__transparent--natureTheme;
 	}
 	
+	main:hover,
 	.more:hover {
 		border-color: $color__transparent--natureTheme;
 	}
@@ -453,15 +415,12 @@ main:hover {
 		color: $color--painTheme;
 	}
 	
-	main:hover {
-		background-color: $color__transparent--painTheme;
-		border-color: $color__transparent--painTheme;
-	}
-	
+	main:hover,
 	.more:active {
 		background-color: $color__transparent--painTheme;
 	}
 	
+	main:hover,
 	.more:hover {
 		border-color: $color__transparent--painTheme;
 	}
@@ -475,15 +434,12 @@ main:hover {
 		color: $color--romanceTheme;
 	}
 	
-	main:hover {
-		background-color: $color__transparent--romanceTheme;
-		border-color: $color__transparent--romanceTheme;
-	}
-	
+	main:hover,
 	.more:active {
 		background-color: $color__transparent--romanceTheme;
 	}
 	
+	main:hover,
 	.more:hover {
 		border-color: $color__transparent--romanceTheme;
 	}
@@ -497,15 +453,12 @@ main:hover {
 		color: $color--somberTheme;
 	}
 	
-	main:hover {
-		background-color: $color__transparent--somberTheme;
-		border-color: $color__transparent--somberTheme;
-	}
-	
+	main:hover,
 	.more:active {
 		background-color: $color__transparent--somberTheme;
 	}
 	
+	main:hover,
 	.more:hover {
 		border-color: $color__transparent--somberTheme;
 	}
@@ -519,15 +472,12 @@ main:hover {
 		color: $color--stormTheme;
 	}
 	
-	main:hover {
-		background-color: $color__transparent--stormTheme;
-		border-color: $color__transparent--stormTheme;
-	}
-	
+	main:hover,
 	.more:active {
 		background-color: $color__transparent--stormTheme;
 	}
 	
+	main:hover,
 	.more:hover {
 		border-color: $color__transparent--stormTheme;
 	}
@@ -541,15 +491,12 @@ main:hover {
 		color: $color--technologyTheme;
 	}
 	
-	main:hover {
-		background-color: $color__transparent--technologyTheme;
-		border-color: $color__transparent--technologyTheme;
-	}
-	
+	main:hover,
 	.more:active {
 		background-color: $color__transparent--technologyTheme;
 	}
 	
+	main:hover,
 	.more:hover {
 		border-color: $color__transparent--technologyTheme;
 	}
@@ -563,15 +510,12 @@ main:hover {
 		color: $color--travelTheme;
 	}
 	
-	main:hover {
-		background-color: $color__transparent--travelTheme;
-		border-color: $color__transparent--travelTheme;
-	}
-	
+	main:hover,
 	.more:active {
 		background-color: $color__transparent--travelTheme;
 	}
 	
+	main:hover,
 	.more:hover {
 		border-color: $color__transparent--travelTheme;
 	}
@@ -585,15 +529,12 @@ main:hover {
 		color: $color--whimsyTheme;
 	}
 	
-	main:hover {
-		background-color: $color__transparent--whimsyTheme;
-		border-color: $color__transparent--whimsyTheme;
-	}
-	
+	main:hover,
 	.more:active {
 		background-color: $color__transparent--whimsyTheme;
 	}
 	
+	main:hover,
 	.more:hover {
 		border-color: $color__transparent--whimsyTheme;
 	}

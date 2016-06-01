@@ -62,7 +62,7 @@ footer {
   height: 25px;
   letter-spacing: 4px;
   padding: 2px 0 2px 4px;
-  transition: all 0.1s ease;
+  transition: all .1s ease;
   width: 160px; }
 
 .more:focus {
@@ -77,11 +77,10 @@ main:hover {
   background-image: url("/images/beach_sm.jpg"); }
   .beachTheme .brand:hover {
     color: purple; }
-  .beachTheme main:hover {
-    background-color: rgba(128, 0, 128, 0.5);
-    border-color: rgba(128, 0, 128, 0.5); }
+  .beachTheme main:hover,
   .beachTheme .more:active {
     background-color: rgba(128, 0, 128, 0.5); }
+  .beachTheme main:hover,
   .beachTheme .more:hover {
     border-color: rgba(128, 0, 128, 0.5); }
 
@@ -90,11 +89,10 @@ main:hover {
   background-image: url("/images/career_sm.jpg"); }
   .careerTheme .brand:hover {
     color: fuchsia; }
-  .careerTheme main:hover {
-    background-color: rgba(255, 0, 255, 0.5);
-    border-color: rgba(255, 0, 255, 0.5); }
+  .careerTheme main:hover,
   .careerTheme .more:active {
     background-color: rgba(255, 0, 255, 0.5); }
+  .careerTheme main:hover,
   .careerTheme .more:hover {
     border-color: rgba(255, 0, 255, 0.5); }
 
@@ -103,11 +101,10 @@ main:hover {
   background-image: url("/images/cat_sm.jpg"); }
   .catTheme .brand:hover {
     color: turquoise; }
-  .catTheme main:hover {
-    background-color: rgba(128, 0, 128, 0.5);
-    border-color: rgba(128, 0, 128, 0.5); }
+  .catTheme main:hover,
   .catTheme .more:active {
     background-color: rgba(128, 0, 128, 0.5); }
+  .catTheme main:hover,
   .catTheme .more:hover {
     border-color: rgba(128, 0, 128, 0.5); }
 
@@ -116,11 +113,10 @@ main:hover {
   background-image: url("/images/cheers_sm.jpg"); }
   .cheersTheme .brand:hover {
     color: darkmagenta; }
-  .cheersTheme main:hover {
-    background-color: rgba(139, 0, 139, 0.5);
-    border-color: rgba(139, 0, 139, 0.5); }
+  .cheersTheme main:hover,
   .cheersTheme .more:active {
     background-color: rgba(139, 0, 139, 0.5); }
+  .cheersTheme main:hover,
   .cheersTheme .more:hover {
     border-color: rgba(139, 0, 139, 0.5); }
 
@@ -129,11 +125,10 @@ main:hover {
   background-image: url("/images/childhood_sm.jpg"); }
   .childhoodTheme .brand:hover {
     color: deeppink; }
-  .childhoodTheme main:hover {
-    background-color: rgba(255, 20, 147, 0.5);
-    border-color: rgba(255, 20, 147, 0.5); }
+  .childhoodTheme main:hover,
   .childhoodTheme .more:active {
     background-color: rgba(255, 20, 147, 0.5); }
+  .childhoodTheme main:hover,
   .childhoodTheme .more:hover {
     border-color: rgba(255, 20, 147, 0.5); }
 
@@ -142,11 +137,10 @@ main:hover {
   background-image: url("/images/coffee_sm.jpg"); }
   .coffeeTheme .brand:hover {
     color: gold; }
-  .coffeeTheme main:hover {
-    background-color: rgba(255, 215, 0, 0.5);
-    border-color: rgba(255, 215, 0, 0.5); }
+  .coffeeTheme main:hover,
   .coffeeTheme .more:active {
     background-color: rgba(255, 215, 0, 0.5); }
+  .coffeeTheme main:hover,
   .coffeeTheme .more:hover {
     border-color: rgba(255, 215, 0, 0.5); }
 
@@ -155,11 +149,10 @@ main:hover {
   background-image: url("/images/dog_sm.jpg"); }
   .dogTheme .brand:hover {
     color: mediumorchid; }
-  .dogTheme main:hover {
-    background-color: rgba(186, 85, 211, 0.5);
-    border-color: rgba(186, 85, 211, 0.5); }
+  .dogTheme main:hover,
   .dogTheme .more:active {
     background-color: rgba(186, 85, 211, 0.5); }
+  .dogTheme main:hover,
   .dogTheme .more:hover {
     border-color: rgba(186, 85, 211, 0.5); }
 
@@ -168,11 +161,10 @@ main:hover {
   background-image: url("/images/fantasy_sm.jpg"); }
   .fantasyTheme .brand:hover {
     color: orangered; }
-  .fantasyTheme main:hover {
-    background-color: rgba(255, 69, 0, 0.5);
-    border-color: rgba(255, 69, 0, 0.5); }
+  .fantasyTheme main:hover,
   .fantasyTheme .more:active {
     background-color: rgba(255, 69, 0, 0.5); }
+  .fantasyTheme main:hover,
   .fantasyTheme .more:hover {
     border-color: rgba(255, 69, 0, 0.5); }
 
@@ -181,11 +173,10 @@ main:hover {
   background-image: url("/images/fitness_sm.jpg"); }
   .fitnessTheme .brand:hover {
     color: deeppink; }
-  .fitnessTheme main:hover {
-    background-color: rgba(255, 20, 147, 0.5);
-    border-color: rgba(255, 20, 147, 0.5); }
+  .fitnessTheme main:hover,
   .fitnessTheme .more:active {
     background-color: rgba(255, 20, 147, 0.5); }
+  .fitnessTheme main:hover,
   .fitnessTheme .more:hover {
     border-color: rgba(255, 20, 147, 0.5); }
 
@@ -194,11 +185,10 @@ main:hover {
   background-image: url("/images/food_sm.jpg"); }
   .foodTheme .brand:hover {
     color: midnightblue; }
-  .foodTheme main:hover {
-    background-color: rgba(25, 25, 112, 0.5);
-    border-color: rgba(25, 25, 112, 0.5); }
+  .foodTheme main:hover,
   .foodTheme .more:active {
     background-color: rgba(25, 25, 112, 0.5); }
+  .foodTheme main:hover,
   .foodTheme .more:hover {
     border-color: rgba(25, 25, 112, 0.5); }
 
@@ -207,11 +197,10 @@ main:hover {
   background-image: url("/images/happy_sm.jpg"); }
   .happyTheme .brand:hover {
     color: tomato; }
-  .happyTheme main:hover {
-    background-color: rgba(255, 99, 71, 0.5);
-    border-color: rgba(255, 99, 71, 0.5); }
+  .happyTheme main:hover,
   .happyTheme .more:active {
     background-color: rgba(255, 99, 71, 0.5); }
+  .happyTheme main:hover,
   .happyTheme .more:hover {
     border-color: rgba(255, 99, 71, 0.5); }
 
@@ -220,11 +209,10 @@ main:hover {
   background-image: url("/images/music_sm.jpg"); }
   .musicTheme .brand:hover {
     color: royalblue; }
-  .musicTheme main:hover {
-    background-color: rgba(65, 105, 225, 0.5);
-    border-color: rgba(65, 105, 225, 0.5); }
+  .musicTheme main:hover,
   .musicTheme .more:active {
     background-color: rgba(65, 105, 225, 0.5); }
+  .musicTheme main:hover,
   .musicTheme .more:hover {
     border-color: rgba(65, 105, 225, 0.5); }
 
@@ -233,11 +221,10 @@ main:hover {
   background-image: url("/images/nature_sm.jpg"); }
   .natureTheme .brand:hover {
     color: crimson; }
-  .natureTheme main:hover {
-    background-color: rgba(220, 20, 60, 0.5);
-    border-color: rgba(220, 20, 60, 0.5); }
+  .natureTheme main:hover,
   .natureTheme .more:active {
     background-color: rgba(220, 20, 60, 0.5); }
+  .natureTheme main:hover,
   .natureTheme .more:hover {
     border-color: rgba(220, 20, 60, 0.5); }
 
@@ -246,11 +233,10 @@ main:hover {
   background-image: url("/images/pain_sm.jpg"); }
   .painTheme .brand:hover {
     color: firebrick; }
-  .painTheme main:hover {
-    background-color: rgba(178, 34, 34, 0.5);
-    border-color: rgba(178, 34, 34, 0.5); }
+  .painTheme main:hover,
   .painTheme .more:active {
     background-color: rgba(178, 34, 34, 0.5); }
+  .painTheme main:hover,
   .painTheme .more:hover {
     border-color: rgba(178, 34, 34, 0.5); }
 
@@ -259,11 +245,10 @@ main:hover {
   background-image: url("/images/romance_sm.jpg"); }
   .romanceTheme .brand:hover {
     color: teal; }
-  .romanceTheme main:hover {
-    background-color: rgba(0, 128, 128, 0.5);
-    border-color: rgba(0, 128, 128, 0.5); }
+  .romanceTheme main:hover,
   .romanceTheme .more:active {
     background-color: rgba(0, 128, 128, 0.5); }
+  .romanceTheme main:hover,
   .romanceTheme .more:hover {
     border-color: rgba(0, 128, 128, 0.5); }
 
@@ -272,11 +257,10 @@ main:hover {
   background-image: url("/images/somber_sm.jpg"); }
   .somberTheme .brand:hover {
     color: lightcoral; }
-  .somberTheme main:hover {
-    background-color: rgba(240, 128, 128, 0.5);
-    border-color: rgba(240, 128, 128, 0.5); }
+  .somberTheme main:hover,
   .somberTheme .more:active {
     background-color: rgba(240, 128, 128, 0.5); }
+  .somberTheme main:hover,
   .somberTheme .more:hover {
     border-color: rgba(240, 128, 128, 0.5); }
 
@@ -285,11 +269,10 @@ main:hover {
   background-image: url("/images/storm_sm.jpg"); }
   .stormTheme .brand:hover {
     color: orangered; }
-  .stormTheme main:hover {
-    background-color: rgba(255, 69, 0, 0.5);
-    border-color: rgba(255, 69, 0, 0.5); }
+  .stormTheme main:hover,
   .stormTheme .more:active {
     background-color: rgba(255, 69, 0, 0.5); }
+  .stormTheme main:hover,
   .stormTheme .more:hover {
     border-color: rgba(255, 69, 0, 0.5); }
 
@@ -298,11 +281,10 @@ main:hover {
   background-image: url("/images/technology_sm.jpg"); }
   .technologyTheme .brand:hover {
     color: springgreen; }
-  .technologyTheme main:hover {
-    background-color: rgba(0, 255, 127, 0.5);
-    border-color: rgba(0, 255, 127, 0.5); }
+  .technologyTheme main:hover,
   .technologyTheme .more:active {
     background-color: rgba(0, 255, 127, 0.5); }
+  .technologyTheme main:hover,
   .technologyTheme .more:hover {
     border-color: rgba(0, 255, 127, 0.5); }
 
@@ -311,11 +293,10 @@ main:hover {
   background-image: url("/images/travel_sm.jpg"); }
   .travelTheme .brand:hover {
     color: crimson; }
-  .travelTheme main:hover {
-    background-color: rgba(220, 20, 60, 0.5);
-    border-color: rgba(220, 20, 60, 0.5); }
+  .travelTheme main:hover,
   .travelTheme .more:active {
     background-color: rgba(220, 20, 60, 0.5); }
+  .travelTheme main:hover,
   .travelTheme .more:hover {
     border-color: rgba(220, 20, 60, 0.5); }
 
@@ -324,11 +305,10 @@ main:hover {
   background-image: url("/images/whimsy_sm.jpg"); }
   .whimsyTheme .brand:hover {
     color: tomato; }
-  .whimsyTheme main:hover {
-    background-color: rgba(255, 99, 71, 0.5);
-    border-color: rgba(255, 99, 71, 0.5); }
+  .whimsyTheme main:hover,
   .whimsyTheme .more:active {
     background-color: rgba(255, 99, 71, 0.5); }
+  .whimsyTheme main:hover,
   .whimsyTheme .more:hover {
     border-color: rgba(255, 99, 71, 0.5); }
 
